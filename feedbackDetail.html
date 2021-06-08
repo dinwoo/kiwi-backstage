@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750, user-scalable=0">
+    <title> </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="./css/all.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/2.5.0/jquery.mockjax.min.js"></script>
+    <script src="./js/all.js"></script>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="sidebar-title">sidebar</div>
+        <div class="box"><a class="link" href="./index.html"> 
+            <p>Index</p></a><a class="link" href="./feedbackDetail.html"> 
+            <p>FeedbackDetail</p></a><a class="link" href="./mediaData.html"> 
+            <p>MediaData</p></a><a class="link" href="./example.html"> 
+            <p>example</p></a></div>
+      </div>
+    </div>
+    <div class="body-wrapper" id="mainBody">
+      <article class="feedback-detail-page">
+        <h1>feedback-detail</h1>
+        <hr>
+        <div class="btn add-btn btn-primary float-right">新增</div>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">*</th>
+              <th scope="col">照片</th>
+              <th scope="col">姓名</th>
+              <th scope="col">性質</th>
+              <th scope="col">評分分數</th>
+              <th scope="col">敘述</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </article>
+    </div>
+    <script src="./js/feedbackDetail.js"></script>
+  </body>
+</html>
