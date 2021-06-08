@@ -1,5 +1,5 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-let apiDomain= 'https://test.com/';
+let apiDomain= 'http://kiwi.ponitor.com.tw';
 
 
 function sendFormData(data) {
@@ -17,13 +17,14 @@ function sendFormData(data) {
   formData.forEach((value, key) => { object[key] = value });
   let json = JSON.stringify(object);
   console.log('formfata:'+json);
+  console.log(JSON.stringify(json));
 
   $.ajax({
     url: `${apiDomain}${url}`,
     type: method,
-    processData: false,
-    contentType: false,
-    data: formData,
+    dataType : 'json', // 預期從server接收的資料型態
+    contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
+    data: json,
   }).done(function (data) {
     console.log(data);
   }).fail(function (res) {
@@ -70,3 +71,35 @@ function getUrlQuery(key) {
   }
   return val;
 }
+
+function uploadFile(fileInput) {
+  var form = new FormData();
+  form.append("file", fileInput.files[0], "json.png");
+
+  var settings = {
+  };
+
+  $.ajax({
+    "url": "http://kiwi.ponitor.com.tw/api/v1/file/upload",
+    "method": "POST",
+    "timeout": 0,
+    "processData": false,
+    "mimeType": "multipart/form-data",
+    "contentType": false,
+    "data": form
+  }).done(function (data) {
+    fileInput.nextElementSibling.value=JSON.parse(data).data.img
+    return JSON.parse(data).data.img
+  }).fail(function (res) {
+    console.log(res);
+    alert('操作失敗');
+  });
+}
+
+$(document).ready(function () {
+  let user = localStorage.getItem('user');
+  console.log(user)
+  if(user==null&&window.location.pathname!='/login.html'){
+    window.location.href = `login.html`;
+  }
+})
