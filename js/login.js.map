@@ -1,0 +1,1 @@
+{"version":3,"sources":["login.js"],"names":["$","document","ready","bindEvent"],"mappings":"aACCA,EAAAC,UAAYC,MAAA,WAITC","file":"login.js","sourcesContent":["// Example starter JavaScript for disabling form submissions if there are invalid fields\r\n(function () {\r\n  \r\n  $(document).ready(function () {\r\n\r\n    bindEvent()\r\n    \r\n  })\r\n})()"]}

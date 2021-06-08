@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=750, user-scalable=0">
-    <title> </title>
+    <title>kiwi backstage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,7 +17,8 @@
   <body>
     <div id="sidebar">
       <div class="sidebar-wrapper">
-        <div class="sidebar-title">sidebar</div>
+        <div class="sidebar-title">kiwi backstage</div>
+        <hr>
         <div class="box"><a class="link" href="./index.html"> 
             <p>Index</p></a><a class="link" href="./feedbackDetail.html"> 
             <p>FeedbackDetail</p></a><a class="link" href="./mediaData.html"> 
@@ -29,7 +30,7 @@
       <article class="index-page">
         <h1>Index</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="testapi">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="/api/v1/index/create/publish">
           <div class="wrapper">
             <h3>meta</h3>
             <div class="content">
@@ -60,8 +61,8 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="meta_img">meta圖片</label>
-                  <input class="form-control" id="meta_img" type="file" value="">
-                  <input class="form-control" type="hidden" name="meta_img" value="" required="">
+                  <input class="form-control" type="file" value="">
+                  <input class="form-control" id="meta_img" type="hidden" name="meta_img" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -97,8 +98,444 @@
                 </div>
               </div>
             </div>
+            <h3>subscribe</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_isEnable">是否顯示</label>
+                  <select class="form-select" id="subscribe_isEnable" name="subscribe_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_id">事件代號</label>
+                  <input class="form-control" id="subscribe_id" type="text" name="subscribe_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_title">標題</label>
+                  <input class="form-control" id="subscribe_title" type="text" name="subscribe_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_subtitle">子標題</label>
+                  <input class="form-control" id="subscribe_subtitle" type="text" name="subscribe_subtitle" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_successText">成功訂閱訊息</label>
+                  <input class="form-control" id="subscribe_successText" type="text" name="subscribe_successText" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_isSubscribedText">已經訂閱訊息</label>
+                  <input class="form-control" id="subscribe_isSubscribedText" type="text" name="subscribe_isSubscribedText" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_img">圖片</label>
+                  <input class="form-control" type="file" value="">
+                  <input class="form-control" id="subscribe_img" type="hidden" name="subscribe_img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="subscribe_buttonText">按鈕文字</label>
+                  <input class="form-control" id="subscribe_buttonText" type="text" name="subscribe_buttonText" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>feedback</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="feedback_isEnable">是否顯示</label>
+                  <select class="form-select" id="feedback_isEnable" name="feedback_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="feedback_title">標題</label>
+                  <input class="form-control" id="feedback_title" type="text" name="feedback_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="feedback_subtitle">子標題</label>
+                  <input class="form-control" id="feedback_subtitle" type="text" name="feedback_subtitle" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>media</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="media_isEnable">是否顯示</label>
+                  <select class="form-select" id="media_isEnable" name="media_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="media_title">標題</label>
+                  <input class="form-control" id="media_title" type="text" name="media_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>source</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="source_isEnable">是否顯示</label>
+                  <select class="form-select" id="source_isEnable" name="source_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="source_sourceImg">圖片</label>
+                  <input class="form-control" type="file" value="">
+                  <input class="form-control" id="source_sourceImg" type="hidden" name="source_sourceImg" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="source_title">標題</label>
+                  <input class="form-control" id="source_title" type="text" name="source_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>taipower</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="taipower_isEnable">是否顯示</label>
+                  <select class="form-select" id="taipower_isEnable" name="taipower_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="taipower_title">標題</label>
+                  <input class="form-control" id="taipower_title" type="text" name="taipower_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>newsFlash</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="newsFlash_isEnable">是否顯示</label>
+                  <select class="form-select" id="newsFlash_isEnable" name="newsFlash_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>partners</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="partners_isEnable">是否顯示</label>
+                  <select class="form-select" id="partners_isEnable" name="partners_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="partners_title">標題</label>
+                  <input class="form-control" id="partners_title" type="text" name="partners_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="partners_subtitle">子標題</label>
+                  <input class="form-control" id="partners_subtitle" type="text" name="partners_subtitle" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>cta</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_isEnable">是否顯示</label>
+                  <select class="form-select" id="cta_isEnable" name="cta_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_title">標題</label>
+                  <input class="form-control" id="cta_title" type="text" name="cta_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_subtitle">子標題</label>
+                  <input class="form-control" id="cta_subtitle" type="text" name="cta_subtitle" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_button_0_id">代碼</label>
+                  <input class="form-control" id="cta_button_0_id" type="text" name="cta_button_0_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_button_0_text">內容</label>
+                  <input class="form-control" id="cta_button_0_text" type="text" name="cta_button_0_text" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_button_0_url">網址</label>
+                  <input class="form-control" id="cta_button_0_url" type="text" name="cta_button_0_url" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_button_1_id">代碼</label>
+                  <input class="form-control" id="cta_button_1_id" type="text" name="cta_button_1_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_button_1_text">內容</label>
+                  <input class="form-control" id="cta_button_1_text" type="text" name="cta_button_1_text" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_button_1_url">網址</label>
+                  <input class="form-control" id="cta_button_1_url" type="text" name="cta_button_1_url" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>faq</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="faq_isEnable">是否顯示</label>
+                  <select class="form-select" id="faq_isEnable" name="faq_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="faq_title">標題</label>
+                  <input class="form-control" id="faq_title" type="text" name="faq_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="faq_moreButtonText">按鈕文字</label>
+                  <input class="form-control" id="faq_moreButtonText" type="text" name="faq_moreButtonText" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="faq_url">連結</label>
+                  <input class="form-control" id="faq_url" type="text" name="faq_url" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="faq_id">事件代號</label>
+                  <input class="form-control" id="faq_id" type="text" name="faq_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="faq_img">插圖</label>
+                  <input class="form-control" type="file" value="">
+                  <input class="form-control" id="faq_img" type="hidden" name="faq_img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>personaTab</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="personaTab_isEnable">是否顯示</label>
+                  <select class="form-select" id="personaTab_isEnable" name="personaTab_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <h3>promo</h3>
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_isEnable">是否顯示</label>
+                  <select class="form-select" id="promo_isEnable" name="promo_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_title">標題</label>
+                  <input class="form-control" id="promo_title" type="text" name="promo_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_description">子標題</label>
+                  <input class="form-control" id="promo_description" type="text" name="promo_description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_img">插圖</label>
+                  <input class="form-control" type="file" value="">
+                  <input class="form-control" id="promo_img" type="hidden" name="promo_img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_additionalPromo_title">additionalPromo標題</label>
+                  <input class="form-control" id="promo_additionalPromo_title" type="text" name="promo_additionalPromo_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_additionalPromo_img">背景圖</label>
+                  <input class="form-control" type="file" value="">
+                  <input class="form-control" id="promo_additionalPromo_img" type="hidden" name="promo_additionalPromo_img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="promo_additionalPromo_isEnable">是否顯示</label>
+                  <select class="form-select" id="promo_additionalPromo_isEnable" name="promo_additionalPromo_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
           </div>
           <button class="btn btn-primary" type="submit">Submit form</button>
+          <button class="btn btn-primary" type="submit">Submit form2</button>
+          <div class="testBtn"></div>
         </form>
       </article>
     </div>

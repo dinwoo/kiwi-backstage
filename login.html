@@ -1,18 +1,36 @@
-
-<link href="./css/login.css" rel="stylesheet"/>
-<article class="login-page">
-  <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles-->
-      <!-- Icon-->
-      <!-- Login Form-->
-      <form>
-        <input class="fadeIn second" id="login" type="text" name="login" placeholder="login"/>
-        <input class="fadeIn third" id="password" type="text" name="login" placeholder="password"/>
-        <input class="fadeIn fourth" type="submit" value="Log In"/>
-      </form>
-      <!-- Remind Passowrd-->
-      <div id="formFooter"><a class="underlineHover" href="#">Forgot Password?</a></div>
-    </div>
-  </div>
-</article>
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750, user-scalable=0">
+    <title>kiwi backstage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="./css/all.css" rel="stylesheet">
+    <link href="./css/login.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/2.5.0/jquery.mockjax.min.js"></script>
+    <script src="./js/all.js"></script>
+  </head>
+  <body>
+    <article class="login-page">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <form class="needs-validation" id="dataForm" novalidate="" method="post" action="/api/v1/user/login">
+            <input class="form-control fadeIn second" id="account" type="text" name="account" value="" required="" placeholder="account">
+            <div class="valid-feedback">OK!</div>
+            <div class="invalid-feedback">不得為空</div>
+            <input class="form-control fadeIn third" id="password" type="text" name="password" value="" required="" placeholder="password">
+            <div class="valid-feedback">OK!</div>
+            <div class="invalid-feedback">不得為空</div>
+            <input class="fadeIn fourth" type="submit" value="Log In">
+          </form>
+        </div>
+      </div>
+    </article>
+    <script src="./js/login.js"></script>
+  </body>
+</html>
