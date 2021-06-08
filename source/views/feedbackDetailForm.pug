@@ -1,0 +1,69 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/feedbackDetailForm.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.feedback-detail-form-page
+    h1 feedbackDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="testapi")
+      .wrapper
+        //- h3 meta
+        .content
+          .form-row
+            .col-md-12
+              label.form-label(for='avatar') 照片
+              input.form-control(type='file' value='')
+              input#avatar.form-control(type='hidden' name="avatar" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='name') 姓名
+              input#name.form-control(type='text' name="name" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='personaType') 性質
+              input#personaType.form-control(type='text' name="personaType" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='rating') 評分分數
+              input#rating.form-control(type='number' name="rating" step="0.1" min="0" max="5" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='text') 敘述
+              textarea#text.form-control(type='text' name="text" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

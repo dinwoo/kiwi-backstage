@@ -1,0 +1,31 @@
+//- extend ../Layout.pug
+
+block pageCSS
+  link(href="./css/login.css", rel="stylesheet")
+
+block pageJs
+  //- script(src="./js/login .js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.login-page
+    .wrapper.fadeInDown
+      #formContent
+        // Tabs Titles
+        // Icon
+        //- .fadeIn.first
+        //-   img#icon(src='http://danielzawadzki.com/codepen/01/icon.svg' alt='User Icon')
+        // Login Form
+        form
+          input#login.fadeIn.second(type='text' name='login' placeholder='login')
+          input#password.fadeIn.third(type='text' name='login' placeholder='password')
+          input.fadeIn.fourth(type='submit' value='Log In')
+        // Remind Passowrd
+        #formFooter
+          a.underlineHover(href='#') Forgot Password?
+
