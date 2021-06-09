@@ -112,27 +112,29 @@ body
   font-size: 0
 
 #sidebar
-  width: 180px
+  width: 220px
   height: 100vh
   font-size: 1rem
   position: fixed
   top: 0
   left: 0
+  z-index: 2
   .sidebar-wrapper
     width: 100%
     height: 100%
     padding: 15px
     box-sizing: border-box
-    background-color: #56baed
+    background-color: #212529
     color: #fff
     .sidebar-title
-      padding-bottom: 20px
-      font-size: 1.5rem
+      // padding-bottom: 20px
+      font-size: 1.2rem
     .box
       a.link
         padding: 10px 5px
         display: block
         color: #fff
+        border-radius: .2rem
         transition: .3s
         p
         &:hover
@@ -144,12 +146,31 @@ body
 
 
 .body-wrapper
-  width: calc(100% - 180px)
+  width: calc(100% - 220px)
   padding: 15px
-  margin-left: 180px
+  padding-top: 70px
+  margin-left: 220px
   font-size: 1rem
   box-sizing: border-box
+  position: relative
 
+header
+  width: 100%
+  color: #fff
+  background-color: #3C8DBB
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1
+  .wrapper
+    margin: .5rem 1rem
+    text-align: right
+    .user-name,.logout
+      font-size: 1rem
+      margin: 0 .5rem
+      +dib
+    .logout
+      cursor: pointer
 .table-data
   width: 100%
   border: 1px solid #333

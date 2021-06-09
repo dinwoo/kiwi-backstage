@@ -99,7 +99,12 @@ function uploadFile(fileInput) {
 $(document).ready(function () {
   let user = localStorage.getItem('user');
   console.log(user)
-  if(user==null&&window.location.pathname!='/login.html'){
+  if(user==null&&window.location.pathname.indexOf('login.html')<0){
     window.location.href = `login.html`;
   }
+
+  $('header .logout').on('click',function () {
+    localStorage.removeItem('user');
+    window.location.href = `login.html`;
+  })
 })
