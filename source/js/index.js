@@ -36,14 +36,13 @@
   }
 
   function setForm(data) {
-    console.log(data)
+    // console.log(data)
     for (const key in data) {
-      console.log(key)
-      console.log(data[key])
+      // console.log(key)
+      // console.log(data[key])
       if(key.indexOf('_isEnable')>=0){
         if(data[key]){
           $(`#${key}`).val('1')
-          console.log('顯示')
         }else{
           $(`#${key}`).val('0')
         }
@@ -63,8 +62,14 @@
       uploadFile($(this)[0])
     })
 
-    $('.testBtn').on('click',function () {
-      $('#dataForm').submit()
+    $('.submit').on('click',function () {
+      isPreview = false
+      apiUrl = '/api/v1/index/create/publish'
+    })
+
+    $('.preview').on('click',function () {
+      isPreview = true
+      apiUrl = '/api/v1/index/create/draft'
     })
     
   })

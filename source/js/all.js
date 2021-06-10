@@ -1,5 +1,7 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 let apiDomain= 'http://kiwi.ponitor.com.tw';
+let isPreview = false;
+let apiUrl = '';
 
 
 function sendFormData(data) {
@@ -7,8 +9,8 @@ function sendFormData(data) {
   let dataForm = document.getElementById('dataForm');
   let formData = new FormData(dataForm);
 
-  let url = $('#dataForm').attr('action')
-  console.log(url)
+  // let url = $('#dataForm').attr('action')
+  // console.log(url)
   let method = $('#dataForm').attr('method')
   console.log(method)
 
@@ -17,10 +19,9 @@ function sendFormData(data) {
   formData.forEach((value, key) => { object[key] = value });
   let json = JSON.stringify(object);
   console.log('formfata:'+json);
-  console.log(JSON.stringify(json));
 
   $.ajax({
-    url: `${apiDomain}${url}`,
+    url: `${apiDomain}${apiUrl}`,
     type: method,
     dataType : 'json', // 預期從server接收的資料型態
     contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
@@ -48,6 +49,7 @@ function bindEvent(data) {
           console.log("OK")
           event.preventDefault()
           event.stopPropagation()
+          console.log(isPreview)
           sendFormData(data)
         }
 
@@ -98,7 +100,7 @@ function uploadFile(fileInput) {
 
 $(document).ready(function () {
   let user = localStorage.getItem('user');
-  console.log(user)
+  // console.log(user)
   if(user==null&&window.location.pathname.indexOf('login.html')<0){
     window.location.href = `login.html`;
   }

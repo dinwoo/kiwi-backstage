@@ -17,10 +17,10 @@ block body
   article.index-page
     h1 Index
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="/api/v1/index/create/publish")
-      .wrapper
-        h3 meta
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="")
+      .wrapper.c-2
         .content
+          h2 meta
           .form-row
             .col-md-12
               label.form-label(for='meta_title') meta標題
@@ -54,8 +54,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 slogan
         .content
+          h2 slogan
           .form-row
             .col-md-12
               label.form-label(for='slogan_isEnabled') 是否顯示
@@ -82,8 +82,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 subscribe
         .content
+          h2 subscribe
           .form-row
             .col-md-12
               label.form-label(for='subscribe_isEnable') 是否顯示
@@ -151,8 +151,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 feedback
         .content
+          h2 feedback
           .form-row
             .col-md-12
               label.form-label(for='feedback_isEnable') 是否顯示
@@ -179,8 +179,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 media
         .content
+          h2 media
           .form-row
             .col-md-12
               label.form-label(for='media_isEnable') 是否顯示
@@ -199,8 +199,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 source
         .content
+          h2 source
           .form-row
             .col-md-12
               label.form-label(for='source_isEnable') 是否顯示
@@ -228,8 +228,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 taipower
         .content
+          h2 taipower
           .form-row
             .col-md-12
               label.form-label(for='taipower_isEnable') 是否顯示
@@ -248,8 +248,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 newsFlash
         .content
+          h2 newsFlash
           .form-row
             .col-md-12
               label.form-label(for='newsFlash_isEnable') 是否顯示
@@ -260,8 +260,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 partners
         .content
+          h2 partners
           .form-row
             .col-md-12
               label.form-label(for='partners_isEnable') 是否顯示
@@ -288,8 +288,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 cta
         .content
+          h2 cta
           .form-row
             .col-md-12
               label.form-label(for='cta_isEnable') 是否顯示
@@ -364,8 +364,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 faq
         .content
+          h2 faq
           .form-row
             .col-md-12
               label.form-label(for='faq_isEnable') 是否顯示
@@ -417,8 +417,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 personaTab
         .content
+          h2 personaTab
           .form-row
             .col-md-12
               label.form-label(for='personaTab_isEnable') 是否顯示
@@ -429,8 +429,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-        h3 promo
         .content
+          h2 promo
           .form-row
             .col-md-12
               label.form-label(for='promo_isEnable') 是否顯示
@@ -493,8 +493,9 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-      button.submit.btn.btn-primary(type='submit') Submit
-      button.preview.btn.btn-primary(type='submit') preview
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.preview.btn.btn-primary(type='submit') preview
 
 
 
