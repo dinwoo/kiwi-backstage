@@ -55,15 +55,31 @@
           <div class="logout btn btn-sm btn-secondary">登出</div>
         </div>
       </header>
-      <article class="feedback-detail-form-page">
-        <h1>feedbackDetail</h1>
+      <article class="source-detail-form-page">
+        <h1>SourceDetail</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="testapi">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="sourceDetail">
           <div class="wrapper">
             <div class="content">
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="name">姓名</label>
+                  <label class="form-label" for="description">描述</label>
+                  <input class="form-control" id="description" type="text" name="description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="location">地點</label>
+                  <input class="form-control" id="location" type="text" name="location" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="name">名稱</label>
                   <input class="form-control" id="name" type="text" name="name" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
@@ -71,35 +87,11 @@
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="personaType">性質</label>
-                  <input class="form-control" id="personaType" type="text" name="personaType" value="" required="">
+                  <label class="form-label" for="img">照片</label>
+                  <input class="form-control" type="file" value="" imgClass="img">
+                  <input class="form-control" id="img" type="hidden" name="img" value="" required="">
                   <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="rating">評分分數</label>
-                  <input class="form-control" id="rating" type="number" name="rating" step="0.1" min="0" max="5" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="text">敘述</label>
-                  <textarea class="form-control" id="text" type="text" name="text" value="" required=""></textarea>
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="avatar">照片</label>
-                  <input class="form-control" type="file" value="" imgClass="avatar">
-                  <input class="form-control" id="avatar" type="hidden" name="avatar" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div><img class="file-img avatar" src="">
+                  <div class="invalid-feedback">不得為空</div><img class="file-img img" src="">
                 </div>
               </div>
             </div>
@@ -108,6 +100,6 @@
         </form>
       </article>
     </div>
-    <script src="./js/feedbackDetailForm.js"></script>
+    <script src="./js/sourceDetailForm.js"></script>
   </body>
 </html>

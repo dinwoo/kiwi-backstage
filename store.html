@@ -55,51 +55,66 @@
           <div class="logout btn btn-sm btn-secondary">登出</div>
         </div>
       </header>
-      <article class="feedback-detail-form-page">
-        <h1>feedbackDetail</h1>
+      <article class="store-page">
+        <h1>Store</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="testapi">
-          <div class="wrapper">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="store">
+          <div class="wrapper c-2">
             <div class="content">
+              <h3>general</h3>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="name">姓名</label>
-                  <input class="form-control" id="name" type="text" name="name" value="" required="">
+                  <label class="form-label" for="general_title">標題</label>
+                  <input class="form-control" id="general_title" type="text" name="general_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>form</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="form_title">標題</label>
+                  <input class="form-control" id="form_title" type="text" name="form_title" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="personaType">性質</label>
-                  <input class="form-control" id="personaType" type="text" name="personaType" value="" required="">
+                  <label class="form-label" for="form_description">描述</label>
+                  <input class="form-control" id="form_description" type="text" name="form_description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>why</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="why_title">標題</label>
+                  <input class="form-control" id="why_title" type="text" name="why_title" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="rating">評分分數</label>
-                  <input class="form-control" id="rating" type="number" name="rating" step="0.1" min="0" max="5" value="" required="">
+                  <label class="form-label" for="why_description">描述</label>
+                  <input class="form-control" id="why_description" type="text" name="why_description" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="text">敘述</label>
-                  <textarea class="form-control" id="text" type="text" name="text" value="" required=""></textarea>
+                  <label class="form-label" for="why_img">圖片</label>
+                  <input class="form-control" type="file" value="" imgClass="why_img">
+                  <input class="form-control" id="why_img" type="hidden" name="why_img" value="" required="">
                   <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="avatar">照片</label>
-                  <input class="form-control" type="file" value="" imgClass="avatar">
-                  <input class="form-control" id="avatar" type="hidden" name="avatar" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div><img class="file-img avatar" src="">
+                  <div class="invalid-feedback">不得為空</div><img class="file-img why_img" src="">
                 </div>
               </div>
             </div>
@@ -108,6 +123,6 @@
         </form>
       </article>
     </div>
-    <script src="./js/feedbackDetailForm.js"></script>
+    <script src="./js/store.js"></script>
   </body>
 </html>

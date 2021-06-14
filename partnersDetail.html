@@ -55,59 +55,27 @@
           <div class="logout btn btn-sm btn-secondary">登出</div>
         </div>
       </header>
-      <article class="feedback-detail-form-page">
-        <h1>feedbackDetail</h1>
+      <article class="partners-detail-page">
+        <h1>partners-detail</h1>
+        <div class="btn add-btn btn-primary">新增</div>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="testapi">
-          <div class="wrapper">
-            <div class="content">
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="name">姓名</label>
-                  <input class="form-control" id="name" type="text" name="name" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="personaType">性質</label>
-                  <input class="form-control" id="personaType" type="text" name="personaType" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="rating">評分分數</label>
-                  <input class="form-control" id="rating" type="number" name="rating" step="0.1" min="0" max="5" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="text">敘述</label>
-                  <textarea class="form-control" id="text" type="text" name="text" value="" required=""></textarea>
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="avatar">照片</label>
-                  <input class="form-control" type="file" value="" imgClass="avatar">
-                  <input class="form-control" id="avatar" type="hidden" name="avatar" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div><img class="file-img avatar" src="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit form</button>
-        </form>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">*</th>
+              <th scope="col">照片</th>
+              <th scope="col">描述</th>
+              <th scope="col">出處</th>
+              <th scope="col">日期</th>
+              <th scope="col">連結</th>
+              <th scope="col">標題</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </article>
     </div>
-    <script src="./js/feedbackDetailForm.js"></script>
+    <script src="./js/partnersDetail.js"></script>
   </body>
 </html>

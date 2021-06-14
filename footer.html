@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750, user-scalable=0">
+    <title>kiwi backstage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="./css/all.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/2.5.0/jquery.mockjax.min.js"></script>
+    <script src="./js/all.js"></script>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="sidebar-title">kiwi-backstage</div>
+        <hr>
+        <div class="box"><a class="link active" href="./index.html"> 
+            <p>Index</p></a>
+          <div class="sub-list"><a class="link" href="./feedbackDetail.html"> 
+              <p>FeedbackDetail</p></a><a class="link" href="./mediaData.html"> 
+              <p>MediaData</p></a><a class="link" href="./sourceDetail.html"> 
+              <p>SourceDetail</p></a><a class="link" href="./taipowerDetail.html"> 
+              <p>TaipowerDetail</p></a><a class="link" href="./newsFlashDetail.html"> 
+              <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
+              <p>FaqDetail</p></a><a class="link" href="./partnersDetail.html"> 
+              <p>PartnersDetail</p></a><a class="link" href="./personaTabDetail.html"> 
+              <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
+              <p>PromoOptionDetail</p></a></div><a class="link" href="./about.html"> 
+            <p>About</p></a><a class="link" href="./corporate.html"> 
+            <p>Corporate</p></a><a class="link" href="./feature.html"> 
+            <p>Feature</p></a><a class="link" href="./campaigns.html"> 
+            <p>Campaigns</p></a>
+          <div class="sub-list"><a class="link" href="./campaignsDetail.html"> 
+              <p>CampaignsDetail</p></a></div><a class="link" href="./greenPower.html"> 
+            <p>GreenPower</p></a>
+          <div class="sub-list"><a class="link" href="./greenPowerDetail.html"> 
+              <p>GreenPowerDetail</p></a></div><a class="link" href="./report.html"> 
+            <p>Report</p></a><a class="link" href="./store.html"> 
+            <p>Store</p></a><a class="link" href="./header.html"> 
+            <p>Header</p></a><a class="link" href="./footer.html"> 
+            <p>Footer</p></a><a class="link" href="./unload.html"> 
+            <p>Unload</p></a>
+        </div>
+      </div>
+    </div>
+    <div class="body-wrapper" id="mainBody">
+      <header>
+        <div class="wrapper">
+          <div class="user-name"><span>daniel</span></div>
+          <div class="logout btn btn-sm btn-secondary">登出</div>
+        </div>
+      </header>
+      <article class="footer-page">
+        <h1>Footer</h1>
+        <hr>
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="footer">
+          <div class="wrapper c-2">
+            <div class="content">
+              <h3>bottom</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="bottom_copyright">Copyright</label>
+                  <input class="form-control" id="bottom_copyright" type="text" name="bottom_copyright" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>customerService</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="customerService_isEnable">是否顯示</label>
+                  <select class="form-select" id="customerService_isEnable" name="customerService_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="customerService_title">服務標題</label>
+                  <input class="form-control" id="customerService_title" type="text" name="customerService_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="customerService_value">服務電話</label>
+                  <input class="form-control" id="customerService_value" type="text" name="customerService_value" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>lineService</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="lineService_isEnable">是否顯示</label>
+                  <select class="form-select" id="lineService_isEnable" name="lineService_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="lineService_title">服務標題</label>
+                  <input class="form-control" id="lineService_title" type="text" name="lineService_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="lineService_value">服務電話</label>
+                  <input class="form-control" id="lineService_value" type="text" name="lineService_value" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="lineService_url">服務連結</label>
+                  <input class="form-control" id="lineService_url" type="text" name="lineService_url" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="lineService_id">事件代碼</label>
+                  <input class="form-control" id="lineService_id" type="text" name="lineService_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>menu</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="menu_others_isEnable">menu_others是否顯示</label>
+                  <select class="form-select" id="menu_others_isEnable" name="menu_others_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="menu_subscribe_isEnable">menu_subscribe是否顯示</label>
+                  <select class="form-select" id="menu_subscribe_isEnable" name="menu_subscribe_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="lineService_id">事件代碼</label>
+                  <input class="form-control" id="lineService_id" type="text" name="lineService_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>openTime</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="openTime_isEnable">是否顯示</label>
+                  <select class="form-select" id="openTime_isEnable" name="openTime_isEnable" required="">
+                    <option value="1">顯示</option>
+                    <option value="0">不顯示</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="openTime_title">標題</label>
+                  <input class="form-control" id="openTime_title" type="text" name="openTime_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="openTime_value">內容</label>
+                  <input class="form-control" id="openTime_value" type="text" name="openTime_value" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+      </article>
+    </div>
+    <script src="./js/footer.js"></script>
+  </body>
+</html>

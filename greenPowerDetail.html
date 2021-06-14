@@ -55,51 +55,87 @@
           <div class="logout btn btn-sm btn-secondary">登出</div>
         </div>
       </header>
-      <article class="feedback-detail-form-page">
-        <h1>feedbackDetail</h1>
+      <article class="greenPowerDetail-page">
+        <h1>GreenPowerDetail</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="testapi">
-          <div class="wrapper">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="greenPowerDetail">
+          <div class="wrapper c-2">
             <div class="content">
+              <h3>general</h3>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="name">姓名</label>
-                  <input class="form-control" id="name" type="text" name="name" value="" required="">
+                  <label class="form-label" for="isEnable">是否啟用</label>
+                  <select class="form-select" id="isEnable" name="isEnable" required="">
+                    <option value="1">啟用</option>
+                    <option value="0">不啟用</option>
+                  </select>
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="personaType">性質</label>
-                  <input class="form-control" id="personaType" type="text" name="personaType" value="" required="">
+                  <label class="form-label" for="general_title">標題</label>
+                  <input class="form-control" id="general_title" type="text" name="general_title" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="rating">評分分數</label>
-                  <input class="form-control" id="rating" type="number" name="rating" step="0.1" min="0" max="5" value="" required="">
+                  <label class="form-label" for="general_id">事件代碼</label>
+                  <input class="form-control" id="general_id" type="text" name="general_id" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="text">敘述</label>
-                  <textarea class="form-control" id="text" type="text" name="text" value="" required=""></textarea>
+                  <label class="form-label" for="general_source">文章出處</label>
+                  <input class="form-control" id="general_source" type="text" name="general_source" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="avatar">照片</label>
-                  <input class="form-control" type="file" value="" imgClass="avatar">
-                  <input class="form-control" id="avatar" type="hidden" name="avatar" value="" required="">
+                  <label class="form-label" for="general_similarPostsTitle">相關文章標題</label>
+                  <input class="form-control" id="general_similarPostsTitle" type="text" name="general_similarPostsTitle" value="" required="">
                   <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div><img class="file-img avatar" src="">
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_tag">標籤</label>
+                  <input class="form-control" id="general_tag" type="text" name="general_tag" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_date">日期</label>
+                  <input class="form-control" id="general_date" type="date" name="general_date" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_url">連結</label>
+                  <input class="form-control" id="general_url" type="text" name="general_url" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_img">活動圖片</label>
+                  <input class="form-control" type="file" value="" imgClass="general_img">
+                  <input class="form-control" id="general_img" type="hidden" name="general_img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div><img class="file-img general_img" src="">
                 </div>
               </div>
             </div>
@@ -108,6 +144,6 @@
         </form>
       </article>
     </div>
-    <script src="./js/feedbackDetailForm.js"></script>
+    <script src="./js/greenPowerDetail.js"></script>
   </body>
 </html>
