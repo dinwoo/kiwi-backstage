@@ -91,6 +91,8 @@ function uploadFile(fileInput) {
     "data": form
   }).done(function (data) {
     fileInput.nextElementSibling.value=JSON.parse(data).data.img
+    console.log($(`.${$(fileInput).attr('imgClass')}`))
+    $(`.${$(fileInput).attr('imgClass')}`).attr('src',JSON.parse(data).data.img)
     return JSON.parse(data).data.img
   }).fail(function (res) {
     console.log(res);
@@ -104,6 +106,11 @@ $(document).ready(function () {
   if(user==null&&window.location.pathname.indexOf('login.html')<0){
     window.location.href = `login.html`;
   }
+
+  $("input[type='file']").on('change',function () {
+    console.log("upload file")
+    uploadFile($(this)[0])
+  })
 
   $('header .logout').on('click',function () {
     localStorage.removeItem('user');

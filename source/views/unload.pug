@@ -4,7 +4,7 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/feedbackDetailForm.js")
+  script(src="./js/unload.js")
   
 //- block head
 //-   include ../components/Header.pug
@@ -13,55 +13,55 @@ block pageJs
 //-   include ../components/Footer.pug
 
 block body
-  article.feedback-detail-form-page
-    h1 feedbackDetail
+  article.unload-page
+    h1 Unload
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="testapi")
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="unload")
       .wrapper
-        //- h3 meta
         .content
+          //- h3 cta
           .form-row
             .col-md-12
-              label.form-label(for='name') 姓名
-              input#name.form-control(type='text' name="name" value='' required='')
+              label.form-label(for='isEnable') 是否顯示
+              select#isEnable.form-select(name="isEnable" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='personaType') 性質
-              input#personaType.form-control(type='text' name="personaType" value='' required='')
+              label.form-label(for='title') 標題
+              input#title.form-control(type='text' name="title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='rating') 評分分數
-              input#rating.form-control(type='number' name="rating" step="0.1" min="0" max="5" value='' required='')
+              label.form-label(for='url') 連結
+              input#url.form-control(type='text' name="url" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='text') 敘述
-              textarea#text.form-control(type='text' name="text" value='' required='')
+              label.form-label(for='content') 內容
+              textarea#content.form-control(type='text' name="content" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='avatar') 照片
-              input.form-control(type='file' value='' imgClass="avatar")
-              input#avatar.form-control(type='hidden' name="avatar" value='' required='')
+              label.form-label(for='ctaButton') 按鈕顯示名稱
+              input#ctaButton.form-control(type='text' name="ctaButton" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
-              img.file-img.avatar(src="")
       button.btn.btn-primary(type='submit') Submit form
 
 

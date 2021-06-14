@@ -1,0 +1,60 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/sourceDetail.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.source-detail-page
+    h1 source-detail
+    .btn.add-btn.btn-primary 新增
+    hr
+    table.table.table-striped
+      thead.thead-dark
+        tr
+          th(scope='col') *
+          th(scope='col') 照片
+          th(scope='col') 描述
+          th(scope='col') 出處
+          th(scope='col') 日期
+          th(scope='col') 連結
+          th(scope='col') 標題
+          th(scope='col') 
+      tbody
+        //- tr
+        //-   td(scope='row') 1
+        //-   td
+        //-     img(src="https://fakeimg.pl/200x200/?text=Hello")
+        //-   td 姓名
+        //-   td 性質
+        //-   td 評分分數
+        //-   td 敘述
+        //-   td
+        //-     .btn.btn-primary 修改
+        //-     .btn.btn-danger 刪除
+        //- tr
+        //-   td(scope='row') 2
+        //-   td
+        //-     img(src="https://fakeimg.pl/200x200/?text=Hello")
+        //-   td 姓名
+        //-   td 性質
+        //-   td 評分分數
+        //-   td 敘述
+        //-   td
+        //-     .btn.btn-primary 修改
+        //-     .btn.btn-danger 刪除
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/newsFlashDetailForm.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.news-flash-detail-form-page
+    h1 NewsFlashDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="newsFlashDetail")
+      .wrapper
+        //- h3 meta
+        .content
+          .form-row
+            .col-md-12
+              label.form-label(for='link') 連結
+              input#link.form-control(type='text' name="link" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='text') 描述
+              textarea#text.form-control(type='text' name="text" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

@@ -1,0 +1,108 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/header.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.header-page
+    h1 Header
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="header")
+      .wrapper.c-2
+        .content
+          h3 general
+          .form-row
+            .col-md-12
+              label.form-label(for='general_logo') logo圖片
+              input.form-control(type='file' value='' imgClass="general_logo")
+              input#general_logo.form-control(type='hidden' name="general_logo" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.general_logo(src="")
+        .content
+          h3 cta
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_isEnabled') 是否顯示
+              select#cta_isEnabled.form-select(name="cta_isEnabled" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_title') 標題
+              input#cta_title.form-control(type='text' name="cta_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_listTitle') 標題
+              input#cta_listTitle.form-control(type='text' name="cta_listTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 joinLine
+          .form-row
+            .col-md-12
+              label.form-label(for='joinLine_buttoneText') 加入Line好友按鈕顯示名稱
+              input#joinLine_buttoneText.form-control(type='text' name="joinLine_buttoneText" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='joinLine_title') 標題
+              input#joinLine_title.form-control(type='text' name="joinLine_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='joinLine_subTitle') 子標題
+              input#joinLine_subTitle.form-control(type='text' name="joinLine_subTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='joinLine_content') 內容
+              input#joinLine_content.form-control(type='text' name="joinLine_content" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='joinLine_url') 連結
+              input#joinLine_url.form-control(type='text' name="joinLine_url" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

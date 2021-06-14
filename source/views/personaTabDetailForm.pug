@@ -1,0 +1,137 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/personaTabDetailForm.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.persona-tab-detail-form-page
+    h1 PersonaTabDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="personaTabDetail")
+      .wrapper
+        //- h3 meta
+        .content
+          .form-row
+            .col-md-12
+              label.form-label(for='id') 事件代號
+              input#id.form-control(type='text' name="id" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='title') 標題
+              input#title.form-control(type='text' name="title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='url') 連結
+              input#url.form-control(type='text' name="url" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='cheaper') 是否便宜
+              select#cheaper.form-select(name="cheaper" required='')
+                option(value=1) 是
+                option(value=0) 不是
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='color') 顏色
+              input#color.form-control(type='color' name="color" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_savePrice') 省下價錢
+              input#detail_savePrice.form-control(type='number' name="detail_savePrice" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_title') 細節標題
+              input#detail_title.form-control(type='text' name="detail_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_buttonTexe') 名稱
+              input#detail_buttonTexe.form-control(type='text' name="detail_buttonTexe" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_exampleDetail') 範例描述細節
+              textarea#detail_exampleDetail.form-control(type='text' name="detail_exampleDetail" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_exampleTitle') 範例描述標題
+              input#detail_exampleTitle.form-control(type='text' name="detail_exampleTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_featureBullets') 特色
+                span.remark 多個請用逗號隔開(,)
+              textarea#detail_featureBullets.form-control(type='text' name="detail_featureBullets" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_featuresTitle') 特點標題名稱
+              input#detail_featuresTitle.form-control(type='text' name="detail_featuresTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='icon') 照片
+              input.form-control(type='file' value='' imgClass="icon")
+              input#icon.form-control(type='hidden' name="icon" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.icon(src="")
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

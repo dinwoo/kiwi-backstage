@@ -1,0 +1,78 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/mediaDataForm.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.media-data-form-page
+    h1 MediaData
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="mediaData")
+      .wrapper
+        //- h3 meta
+        .content
+          .form-row
+            .col-md-12
+              label.form-label(for='excerpt') 描述
+              input#excerpt.form-control(type='text' name="excerpt" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='source') 出處
+              input#source.form-control(type='text' name="source" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='time') 時間
+              input#time.form-control(type='date' name="time" step="0.1" min="0" max="5" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='url') 連結
+              input#url.form-control(type='text' name="url" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='title') 標題
+              input#title.form-control(type='text' name="title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='img') 照片
+              input.form-control(type='file' value='' imgClass="img")
+              input#img.form-control(type='hidden' name="img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.img(src="")
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

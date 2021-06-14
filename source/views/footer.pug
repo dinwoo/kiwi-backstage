@@ -1,0 +1,176 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/footer.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.footer-page
+    h1 Footer
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="footer")
+      .wrapper.c-2
+        .content
+          h3 bottom
+          .form-row
+            .col-md-12
+              label.form-label(for='bottom_copyright') Copyright
+              input#bottom_copyright.form-control(type='text' name="bottom_copyright" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          //- .form-row
+          //-   .col-md-12
+          //-     label.form-label(for='general_logo') logo圖片
+          //-     input.form-control(type='file' value='' imgClass="general_logo")
+          //-     input#general_logo.form-control(type='hidden' name="general_logo" value='' required='')
+          //-     .valid-feedback
+          //-       | OK!
+          //-     .invalid-feedback
+          //-       | 不得為空
+          //-     img.file-img.general_logo(src="")
+        .content
+          h3 customerService
+          .form-row
+            .col-md-12
+              label.form-label(for='customerService_isEnable') 是否顯示
+              select#customerService_isEnable.form-select(name="customerService_isEnable" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='customerService_title') 服務標題
+              input#customerService_title.form-control(type='text' name="customerService_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='customerService_value') 服務電話
+              input#customerService_value.form-control(type='text' name="customerService_value" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 lineService
+          .form-row
+            .col-md-12
+              label.form-label(for='lineService_isEnable') 是否顯示
+              select#lineService_isEnable.form-select(name="lineService_isEnable" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='lineService_title') 服務標題
+              input#lineService_title.form-control(type='text' name="lineService_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='lineService_value') 服務電話
+              input#lineService_value.form-control(type='text' name="lineService_value" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='lineService_url') 服務連結
+              input#lineService_url.form-control(type='text' name="lineService_url" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='lineService_id') 事件代碼
+              input#lineService_id.form-control(type='text' name="lineService_id" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 menu
+          .form-row
+            .col-md-12
+              label.form-label(for='menu_others_isEnable') menu_others是否顯示
+              select#menu_others_isEnable.form-select(name="menu_others_isEnable" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='menu_subscribe_isEnable') menu_subscribe是否顯示
+              select#menu_subscribe_isEnable.form-select(name="menu_subscribe_isEnable" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='lineService_id') 事件代碼
+              input#lineService_id.form-control(type='text' name="lineService_id" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 openTime
+          .form-row
+            .col-md-12
+              label.form-label(for='openTime_isEnable') 是否顯示
+              select#openTime_isEnable.form-select(name="openTime_isEnable" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='openTime_title') 標題
+              input#openTime_title.form-control(type='text' name="openTime_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='openTime_value') 內容
+              input#openTime_value.form-control(type='text' name="openTime_value" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

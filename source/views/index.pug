@@ -48,12 +48,13 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_img') meta圖片
-              input.form-control(type='file' value='')
+              input.form-control(type='file' value='' imgClass="meta_img")
               input#meta_img.form-control(type='hidden' name="meta_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
+              img.file-img.meta_img(src="")
         .content
           h2 slogan
           .form-row
@@ -136,21 +137,22 @@ block body
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='subscribe_img') 圖片
-              input.form-control(type='file' value='')
-              input#subscribe_img.form-control(type='hidden' name="subscribe_img" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
               label.form-label(for='subscribe_buttonText') 按鈕文字
               input#subscribe_buttonText.form-control(type='text' name="subscribe_buttonText" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='subscribe_img') 圖片
+              input.form-control(type='file' value='' imgClass="subscribe_img")
+              input#subscribe_img.form-control(type='hidden' name="subscribe_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.subscribe_img(src="")
         .content
           h2 feedback
           .form-row
@@ -213,21 +215,22 @@ block body
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='source_sourceImg') 圖片
-              input.form-control(type='file' value='')
-              input#source_sourceImg.form-control(type='hidden' name="source_sourceImg" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
               label.form-label(for='source_title') 標題
               input#source_title.form-control(type='text' name="source_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='source_sourceImg') 圖片
+              input.form-control(type='file' value='' imgClass="source_sourceImg")
+              input#source_sourceImg.form-control(type='hidden' name="source_sourceImg" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.source_sourceImg(src="")
         .content
           h2 taipower
           .form-row
@@ -411,12 +414,13 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='faq_img') 插圖
-              input.form-control(type='file' value='')
+              input.form-control(type='file' value='' imgClass="faq_img")
               input#faq_img.form-control(type='hidden' name="faq_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
+              img.file-img.faq_img(src="")
         .content
           h2 personaTab
           .form-row
@@ -459,26 +463,8 @@ block body
                 | 不得為空
           .form-row
             .col-md-12
-              label.form-label(for='promo_img') 插圖
-              input.form-control(type='file' value='')
-              input#promo_img.form-control(type='hidden' name="promo_img" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
               label.form-label(for='promo_additionalPromo_title') additionalPromo標題
               input#promo_additionalPromo_title.form-control(type='text' name="promo_additionalPromo_title" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='promo_additionalPromo_img') 背景圖
-              input.form-control(type='file' value='')
-              input#promo_additionalPromo_img.form-control(type='hidden' name="promo_additionalPromo_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -493,6 +479,26 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='promo_img') 插圖
+              input.form-control(type='file' value='' imgClass="promo_img")
+              input#promo_img.form-control(type='hidden' name="promo_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.promo_img(src="")
+          .form-row
+            .col-md-12
+              label.form-label(for='promo_additionalPromo_img') 背景圖
+              input.form-control(type='file' value='' imgClass="promo_additionalPromo_img")
+              input#promo_additionalPromo_img.form-control(type='hidden' name="promo_additionalPromo_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.promo_additionalPromo_img(src="")
       .btn-box
         button.submit.btn.btn-primary(type='submit') Submit
         button.preview.btn.btn-primary(type='submit') preview

@@ -1,0 +1,46 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/partnersDetailForm.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.partners-detail-form-page
+    h1 PartnersDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="partnersDetail")
+      .wrapper
+        //- h3 meta
+        .content
+          .form-row
+            .col-md-12
+              label.form-label(for='name') 名稱
+              input#name.form-control(type='text' name="name" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='img') 照片
+              input.form-control(type='file' value='' imgClass="img")
+              input#img.form-control(type='hidden' name="img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.img(src="")
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

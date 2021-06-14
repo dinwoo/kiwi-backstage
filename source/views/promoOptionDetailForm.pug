@@ -1,0 +1,52 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/promoOptionDetailForm.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.promo-option-detail-form-page
+    h1 PromoOptionDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="promoOptionDetail")
+      .wrapper
+        //- h3 meta
+        .content
+          .form-row
+            .col-md-12
+              label.form-label(for='text') 內容
+              input#text.form-control(type='text' name="text" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='value') 值
+              input#value.form-control(type='text' name="value" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='url') 網址
+              input#url.form-control(type='text' name="url" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

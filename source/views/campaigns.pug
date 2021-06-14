@@ -1,0 +1,54 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/campaigns.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.campaigns-page
+    h1 Campaigns
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="campaigns")
+      .wrapper
+        .content
+          //- h3 meta
+          .form-row
+            .col-md-12
+              label.form-label(for='isEnabled') 是否顯示
+              select#isEnabled.form-select(name="isEnabled" required='')
+                option(value=1) 顯示
+                option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='currentTitle') 開始標題名稱
+              input#currentTitle.form-control(type='text' name="currentTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='endedTitle') 結束標題名稱
+              input#endedTitle.form-control(type='text' name="endedTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

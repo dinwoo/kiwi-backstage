@@ -57,11 +57,6 @@
 
     getForm()
 
-    $("input[type='file']").on('change',function () {
-      console.log("upload file")
-      uploadFile($(this)[0])
-    })
-
     $('.submit').on('click',function () {
       isPreview = false
       apiUrl = '/api/v1/index/create/publish'

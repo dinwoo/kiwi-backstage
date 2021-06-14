@@ -1,0 +1,72 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/report.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.report-page
+    h1 Report
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="report")
+      .wrapper.c-2
+        .content
+          h3 meta
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_title') meta標題
+              input#meta_title.form-control(type='text' name="meta_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_description') meta描述
+              input#meta_description.form-control(type='text' name="meta_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_siteName') meta網站名稱
+              input#meta_siteName.form-control(type='text' name="meta_siteName" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_img') meta圖片
+              input.form-control(type='file' value='' imgClass="meta_img")
+              input#meta_img.form-control(type='hidden' name="meta_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.meta_img(src="")
+        .content
+          h3 general
+          .form-row
+            .col-md-12
+              label.form-label(for='general_title') 標題
+              input#general_title.form-control(type='text' name="general_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

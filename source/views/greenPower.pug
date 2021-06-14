@@ -1,0 +1,104 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/greenPower.js")
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.greenPower-page
+    h1 GreenPower
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="greenPower")
+      .wrapper.c-2
+        .content
+          h3 meta
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_title') meta標題
+              input#meta_title.form-control(type='text' name="meta_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_description') meta描述
+              input#meta_description.form-control(type='text' name="meta_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_siteName') meta網站名稱
+              input#meta_siteName.form-control(type='text' name="meta_siteName" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_img') meta圖片
+              input.form-control(type='file' value='' imgClass="meta_img")
+              input#meta_img.form-control(type='hidden' name="meta_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.meta_img(src="")
+        .content
+          h3 general
+          .form-row
+            .col-md-12
+              label.form-label(for='general_title') 標題
+              input#general_title.form-control(type='text' name="general_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_subtitle') 子標題
+              input#general_subtitle.form-control(type='text' name="general_subtitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_loadMoreButton') 載入更多文章按鈕名稱
+              input#general_loadMoreButton.form-control(type='text' name="general_loadMoreButton" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_filterTitle') 選擇文章類型按鈕名稱
+              input#general_filterTitle.form-control(type='text' name="general_filterTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_listNum') 一頁顯示文章數
+              input#general_listNum.form-control(type='number' name="general_listNum" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

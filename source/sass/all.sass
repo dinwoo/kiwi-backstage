@@ -110,6 +110,9 @@ html
 body
   // background-color: #f3c100
   font-size: 0
+  
+hr
+  margin: 0.5rem 0
 
 h1
   +dib
@@ -121,6 +124,8 @@ h2
   width: 220px
   height: 100vh
   font-size: 1rem
+  background-color: #212529
+  overflow-y: auto
   position: fixed
   top: 0
   left: 0
@@ -130,7 +135,6 @@ h2
     height: 100%
     padding: 15px
     box-sizing: border-box
-    background-color: #212529
     color: #fff
     .sidebar-title
       // padding-bottom: 20px
@@ -143,10 +147,17 @@ h2
         border-radius: .2rem
         transition: .3s
         p
-        &:hover
+          font-size: 1rem
+        &:hover,&.active
           color: #333
           background-color: #fff
           text-decoration: none
+      .sub-list
+        a.link
+          padding: 5px 0px 5px 20px
+          p
+            font-size: 0.8rem
+
 
 
 
@@ -234,7 +245,14 @@ form
         margin-top: 0.5rem
       .form-label
         margin-bottom: 0rem
+        font-size: 0.8rem
         font-weight: bold
+        span.remark
+          padding: 0 0.5rem
+          font-size: .6rem
+      .file-img
+        width: 300px
+        margin: 10px 0
   .btn-box
     text-align: center
     button.btn
@@ -249,9 +267,16 @@ table
   img
     width: 100px
 
+.colorpick-eyedropper-input-trigger
+  display: none
+
 textarea
   height: 200px
   resize: none
+
+input[type="color"]
+  width: 100px
+  height: 50px
 
 .add-btn
   float: right
