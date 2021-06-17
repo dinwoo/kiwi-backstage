@@ -58,13 +58,24 @@
       <article class="feedback-detail-form-page">
         <h1>feedbackDetail</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="testapi">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="" action="">
           <div class="wrapper">
             <div class="content">
               <div class="form-row">
                 <div class="col-md-12">
+                  <label class="form-label" for="isEnable">是否啟用</label>
+                  <select class="form-select" id="isEnable" name="isEnable" required="">
+                    <option value="1">啟用</option>
+                    <option value="0">不啟用</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
                   <label class="form-label" for="name">姓名</label>
-                  <input class="form-control" id="name" type="text" name="name" value="" required="">
+                  <input class="form-control form-bind-data" id="name" type="text" name="name" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -72,7 +83,7 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="personaType">性質</label>
-                  <input class="form-control" id="personaType" type="text" name="personaType" value="" required="">
+                  <input class="form-control form-bind-data" id="personaType" type="text" name="personaType" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -80,7 +91,7 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="rating">評分分數</label>
-                  <input class="form-control" id="rating" type="number" name="rating" step="0.1" min="0" max="5" value="" required="">
+                  <input class="form-control form-bind-data" id="rating" type="number" name="rating" step="0.5" min="0.5" max="5" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -88,7 +99,7 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="text">敘述</label>
-                  <textarea class="form-control" id="text" type="text" name="text" value="" required=""></textarea>
+                  <textarea class="form-control form-bind-data" id="text" type="text" name="text" value="" required=""></textarea>
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -97,17 +108,19 @@
                 <div class="col-md-12">
                   <label class="form-label" for="avatar">照片</label>
                   <input class="form-control" type="file" value="" imgClass="avatar">
-                  <input class="form-control" id="avatar" type="hidden" name="avatar" value="" required="">
+                  <input class="form-control form-bind-data" id="avatar" type="hidden" name="avatar" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div><img class="file-img avatar" src="">
                 </div>
               </div>
             </div>
           </div>
+          <div class="page-data" data-apiUrl="/api/v1/index/feedback/detail" data-nextTo="feedbackDetail.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
       </article>
     </div>
-    <script src="./js/feedbackDetailForm.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

@@ -58,37 +58,16 @@
       <article class="media-data-form-page">
         <h1>MediaData</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="mediaData">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="" action="">
           <div class="wrapper">
             <div class="content">
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="excerpt">描述</label>
-                  <input class="form-control" id="excerpt" type="text" name="excerpt" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="source">出處</label>
-                  <input class="form-control" id="source" type="text" name="source" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="time">時間</label>
-                  <input class="form-control" id="time" type="date" name="time" step="0.1" min="0" max="5" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="url">連結</label>
-                  <input class="form-control" id="url" type="text" name="url" value="" required="">
+                  <label class="form-label" for="isEnable">是否啟用</label>
+                  <select class="form-select" id="isEnable" name="isEnable" required="">
+                    <option value="1">啟用</option>
+                    <option value="0">不啟用</option>
+                  </select>
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -96,7 +75,31 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="title">標題</label>
-                  <input class="form-control" id="title" type="text" name="title" value="" required="">
+                  <input class="form-control form-bind-data" id="title" type="text" name="title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="excerpt">描述</label>
+                  <input class="form-control form-bind-data" id="excerpt" type="text" name="excerpt" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="source">出處</label>
+                  <input class="form-control form-bind-data" id="source" type="text" name="source" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="url">連結</label>
+                  <input class="form-control form-bind-data" id="url" type="text" name="url" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -105,17 +108,19 @@
                 <div class="col-md-12">
                   <label class="form-label" for="img">照片</label>
                   <input class="form-control" type="file" value="" imgClass="img">
-                  <input class="form-control" id="img" type="hidden" name="img" value="" required="">
+                  <input class="form-control form-bind-data" id="img" type="hidden" name="img" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div><img class="file-img img" src="">
                 </div>
               </div>
             </div>
           </div>
+          <div class="page-data" data-apiUrl="/api/v1/index/media/detail" data-nextTo="mediaData.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
       </article>
     </div>
-    <script src="./js/mediaDataForm.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>
