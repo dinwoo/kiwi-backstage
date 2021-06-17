@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_title') meta標題
-              input#meta_title.form-control(type='text' name="meta_title" value='' required='')
+              input#meta_title.form-control.form-bind-data(type='text' name="meta_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_description') meta描述
-              input#meta_description.form-control(type='text' name="meta_description" value='' required='')
+              input#meta_description.form-control.form-bind-data(type='text' name="meta_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +39,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_siteName') meta網站名稱
-              input#meta_siteName.form-control(type='text' name="meta_siteName" value='' required='')
+              input#meta_siteName.form-control.form-bind-data(type='text' name="meta_siteName" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -48,7 +48,7 @@ block body
             .col-md-12
               label.form-label(for='meta_img') meta圖片
               input.form-control(type='file' value='' imgClass="meta_img")
-              input#meta_img.form-control(type='hidden' name="meta_img" value='' required='')
+              input#meta_img.form-control.form-bind-data(type='hidden' name="meta_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -59,7 +59,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='heading_title') 標題
-              input#heading_title.form-control(type='text' name="heading_title" value='' required='')
+              input#heading_title.form-control.form-bind-data(type='text' name="heading_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -67,7 +67,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='heading_description') 描述
-              input#heading_description.form-control(type='text' name="heading_description" value='' required='')
+              input#heading_description.form-control.form-bind-data(type='text' name="heading_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -77,7 +77,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='subheading_description') 描述
-              textarea#subheading_description.form-control(type='text' name="subheading_description" value='' required='')
+              textarea#subheading_description.form-control.form-bind-data(type='text' name="subheading_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -86,7 +86,7 @@ block body
             .col-md-12
               label.form-label(for='subheading_img') 圖片
               input.form-control(type='file' value='' imgClass="subheading_img")
-              input#subheading_img.form-control(type='hidden' name="subheading_img" value='' required='')
+              input#subheading_img.form-control.form-bind-data(type='hidden' name="subheading_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -98,7 +98,7 @@ block body
             .col-md-12
               label.form-label(for='splashImg') 圖片
               input.form-control(type='file' value='' imgClass="splashImg")
-              input#splashImg.form-control(type='hidden' name="splashImg" value='' required='')
+              input#splashImg.form-control.form-bind-data(type='hidden' name="splashImg" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

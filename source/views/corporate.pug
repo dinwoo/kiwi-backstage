@@ -4,7 +4,8 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/corporate.js")
+  script(src="./js/form.js")
+  //- script(src="./js/corporate.js")
   
 //- block head
 //-   include ../components/Header.pug
@@ -23,7 +24,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_title') meta標題
-              input#meta_title.form-control(type='text' name="meta_title" value='' required='')
+              input#meta_title.form-control.form-bind-data(type='text' name="meta_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +32,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_description') meta描述
-              input#meta_description.form-control(type='text' name="meta_description" value='' required='')
+              input#meta_description.form-control.form-bind-data(type='text' name="meta_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +40,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_siteName') meta網站名稱
-              input#meta_siteName.form-control(type='text' name="meta_siteName" value='' required='')
+              input#meta_siteName.form-control.form-bind-data(type='text' name="meta_siteName" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -48,7 +49,7 @@ block body
             .col-md-12
               label.form-label(for='meta_img') meta圖片
               input.form-control(type='file' value='' imgClass="meta_img")
-              input#meta_img.form-control(type='hidden' name="meta_img" value='' required='')
+              input#meta_img.form-control.form-bind-data(type='hidden' name="meta_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -59,7 +60,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='form_title') 標題
-              input#form_title.form-control(type='text' name="form_title" value='' required='')
+              input#form_title.form-control.form-bind-data(type='text' name="form_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -67,7 +68,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='form_description') 描述
-              input#form_description.form-control(type='text' name="form_description" value='' required='')
+              input#form_description.form-control.form-bind-data(type='text' name="form_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -77,7 +78,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='subheading_description') 描述
-              textarea#content.form-control(type='text' name="subheading_description" value='' required='')
+              textarea#subheading_description.form-control.form-bind-data(type='text' name="subheading_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -86,7 +87,7 @@ block body
             .col-md-12
               label.form-label(for='subheading_img') 圖片
               input.form-control(type='file' value='' imgClass="subheading_img")
-              input#subheading_img.form-control(type='hidden' name="subheading_img" value='' required='')
+              input#subheading_img.form-control.form-bind-data(type='hidden' name="subheading_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -97,17 +98,17 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_title') 標題
-              input#general_title.form-control(type='text' name="general_title" value='' required='')
+              input#general_title.form-control.form-bind-data(type='text' name="general_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
         .content
-          h3 meta
+          h3 why
           .form-row
             .col-md-12
               label.form-label(for='why_title') 標題
-              input#why_title.form-control(type='text' name="why_title" value='' required='')
+              input#why_title.form-control.form-bind-data(type='text' name="why_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -115,7 +116,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='why_description') 描述
-              input#why_description.form-control(type='text' name="why_description" value='' required='')
+              input#why_description.form-control.form-bind-data(type='text' name="why_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -124,15 +125,77 @@ block body
             .col-md-12
               label.form-label(for='why_img') 圖片
               input.form-control(type='file' value='' imgClass="why_img")
-              input#why_img.form-control(type='hidden' name="why_img" value='' required='')
+              input#why_img.form-control.form-bind-data(type='hidden' name="why_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
               img.file-img.why_img(src="")
+        .content
+          h3 vision
+          .form-row
+            .col-md-12
+              label.form-label(for='vision_title') 標題
+              input#vision_title.form-control.form-bind-data(type='text' name="vision_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='vision_subtitle') 子標題
+              input#vision_subtitle.form-control.form-bind-data(type='text' name="vision_subtitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .items-title vision_items
+            .items-box(data-itemKey="vision_items")
+              .items
+                .col-md-12
+                  label.form-label() 標題
+                  input.form-control.form-bind-items-data(type='text' name="vision_item_title" value='items1' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+                .col-md-12
+                  label.form-label 圖片
+                  input.form-control(type='file' value='' imgClass="vision_item_img")
+                  input.form-control.form-bind-items-data(type='hidden' name="vision_item_img" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+                  img.file-img.vision_item_img(src="")
+            .btn-add.btn.btn-sm.btn-primary(data-copy="vision_items") 新增
+
+              
+
+      .page-data(data-apiUrl="/api/v1/corporate/publish" data-nextTo="corporate.html" data-isMainPage="1")
+      //- input.form-control.form-bind-data.form-bind-data(type='hidden' name="id" value='' required='')
       button.btn.btn-primary(type='submit') Submit form
 
-
+    .hidde-box
+      .vision_items
+        .items
+          .col-md-12
+            label.form-label() 子標題
+            input.form-control.form-bind-data(type='text' name="vision_item_title" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 圖片
+            input.form-control(type='file' value='' imgClass="vision_item_img")
+            input.form-control.form-bind-items-data(type='hidden' name="vision_item_img" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+            img.file-img.vision_item_img(src="")
 
 
 

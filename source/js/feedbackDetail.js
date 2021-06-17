@@ -1,35 +1,9 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
 
-  $.mockjax({
-      url:apiDomain+ 'api/test',
-      status: 200,
-      responseTime: 750,         
-      responseText: {
-        "success":true,
-        "errorCode":200,
-        "data":{
-          1:{
-            avatar:'https://fakeimg.pl/200x200/?text=Hello',
-            name: 'name',
-            personaType: 'personaType',
-            rating: 'rating',
-            text: 'text',
-          },
-          2:{
-            avatar:'https://fakeimg.pl/200x200/?text=Hello',
-            name: 'name',
-            personaType: 'personaType',
-            rating: 'rating',
-            text: 'text',
-          }
-        }
-      }
-  });
-
   function getList() {
     $.ajax({
-      url: apiDomain+'api/test',
+      url: apiDomain+'/api/v1/index/feedback/detail/all',
       type: 'get',
       data:{
       },
@@ -50,15 +24,16 @@
       console.log(data[i])
       str=`
         <tr>
-          <td scope="row">${i}</td>
+          <td scope="row">${parseInt(i)+1}</td>
           <td><img src="${data[i].avatar}"></td>
           <td>${data[i].name}</td>
           <td>${data[i].personaType}</td>
           <td>${data[i].rating}</td>
           <td>${data[i].text}</td>
+          <td>${data[i].isEnable?'是':'否'}</td>
           <td>
-            <div class="btn edit-btn btn-primary" data-key="${i}">修改</div>
-            <div class="btn delete-btn btn-danger" data-key="${i}">刪除</div>
+            <div class="btn edit-btn btn-primary" data-key="${data[i].id}">修改</div>
+            <div class="btn delete-btn btn-danger" data-key="${data[i].id}">刪除</div>
           </td>
         </tr>
       `
@@ -75,9 +50,13 @@
       // console.log($(this).data('key'))
       let isDelete = confirm(`是否刪除${$(this).data('key')}?`)
       if(isDelete){
-        alert("已刪除")
+        // alert("已刪除")
+        deleteApi({
+          apiUrl:`/api/v1/index/feedback/detail`,
+          id:$(this).data('key')
+        })
       }else{
-        alert("取消刪除")
+        // alert("取消刪除")
       }
     })
   }

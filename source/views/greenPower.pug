@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_title') meta標題
-              input#meta_title.form-control(type='text' name="meta_title" value='' required='')
+              input#meta_title.form-control.form-bind-data(type='text' name="meta_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_description') meta描述
-              input#meta_description.form-control(type='text' name="meta_description" value='' required='')
+              input#meta_description.form-control.form-bind-data(type='text' name="meta_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +39,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='meta_siteName') meta網站名稱
-              input#meta_siteName.form-control(type='text' name="meta_siteName" value='' required='')
+              input#meta_siteName.form-control.form-bind-data(type='text' name="meta_siteName" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -48,7 +48,7 @@ block body
             .col-md-12
               label.form-label(for='meta_img') meta圖片
               input.form-control(type='file' value='' imgClass="meta_img")
-              input#meta_img.form-control(type='hidden' name="meta_img" value='' required='')
+              input#meta_img.form-control.form-bind-data(type='hidden' name="meta_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -59,7 +59,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_title') 標題
-              input#general_title.form-control(type='text' name="general_title" value='' required='')
+              input#general_title.form-control.form-bind-data(type='text' name="general_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -67,7 +67,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_subtitle') 子標題
-              input#general_subtitle.form-control(type='text' name="general_subtitle" value='' required='')
+              input#general_subtitle.form-control.form-bind-data(type='text' name="general_subtitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -75,7 +75,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_loadMoreButton') 載入更多文章按鈕名稱
-              input#general_loadMoreButton.form-control(type='text' name="general_loadMoreButton" value='' required='')
+              input#general_loadMoreButton.form-control.form-bind-data(type='text' name="general_loadMoreButton" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -83,7 +83,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_filterTitle') 選擇文章類型按鈕名稱
-              input#general_filterTitle.form-control(type='text' name="general_filterTitle" value='' required='')
+              input#general_filterTitle.form-control.form-bind-data(type='text' name="general_filterTitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -91,7 +91,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_listNum') 一頁顯示文章數
-              input#general_listNum.form-control(type='number' name="general_listNum" value='' required='')
+              input#general_listNum.form-control.form-bind-data(type='number' name="general_listNum" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

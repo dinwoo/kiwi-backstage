@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='title') 標題
-              input#title.form-control(type='text' name="title" value='' required='')
+              input#title.form-control.form-bind-data(type='text' name="title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='content') 內容
-              textarea#content.form-control(type='text' name="content" value='' required='')
+              textarea#content.form-control.form-bind-data(type='text' name="content" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +39,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='order') 順序
-              input#order.form-control(type='number' name="order" value='' required='')
+              input#order.form-control.form-bind-data(type='number' name="order" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

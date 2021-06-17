@@ -3,7 +3,7 @@
 
   function getList() {
     $.ajax({
-      url: apiDomain+'/api/v1/index/media/detail/all',
+      url: apiDomain+'/api/v1/index/source/detail/all',
       type: 'get',
       data:{
       },
@@ -25,11 +25,9 @@
       str=`
         <tr>
           <td scope="row">${parseInt(i)+1}</td>
-          <td>${data[i].title}</td>
-          <td>${data[i].excerpt}</td>
-          <td>${data[i].source}</td>
-          <td>${data[i].url}</td>
-          <td>${data[i].time}</td>
+          <td>${data[i].name}</td>
+          <td>${data[i].description}</td>
+          <td>${data[i].location}</td>
           <td><img src="${data[i].img}"></td>
           <td>${data[i].isEnable?'是':'否'}</td>
           <td>
@@ -45,7 +43,7 @@
   function bindEvent() {
     $('.edit-btn').on('click',function () {
       // console.log($(this).data('key'))
-      window.location.href = `mediaDataForm.html?id=${$(this).data('key')}`;
+      window.location.href = `sourceDetailForm.html?id=${$(this).data('key')}`;
     })
     $('.delete-btn').on('click',function () {
       // console.log($(this).data('key'))
@@ -66,7 +64,7 @@
     getList();
     $('.add-btn').on('click',function () {
       // console.log($(this).data('key'))
-      window.location.href = `mediaDataForm.html`;
+      window.location.href = `sourceDetailForm.html`;
     })
 
     

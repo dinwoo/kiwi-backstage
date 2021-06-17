@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='id') 事件代號
-              input#id.form-control(type='text' name="id" value='' required='')
+              input#id.form-control.form-bind-data(type='text' name="id" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='title') 標題
-              input#title.form-control(type='text' name="title" value='' required='')
+              input#title.form-control.form-bind-data(type='text' name="title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +39,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='url') 連結
-              input#url.form-control(type='text' name="url" value='' required='')
+              input#url.form-control.form-bind-data(type='text' name="url" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -57,7 +57,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='color') 顏色
-              input#color.form-control(type='color' name="color" value='' required='')
+              input#color.form-control.form-bind-data(type='color' name="color" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -65,7 +65,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_savePrice') 省下價錢
-              input#detail_savePrice.form-control(type='number' name="detail_savePrice" value='' required='')
+              input#detail_savePrice.form-control.form-bind-data(type='number' name="detail_savePrice" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -73,7 +73,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_title') 細節標題
-              input#detail_title.form-control(type='text' name="detail_title" value='' required='')
+              input#detail_title.form-control.form-bind-data(type='text' name="detail_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -81,7 +81,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_buttonTexe') 名稱
-              input#detail_buttonTexe.form-control(type='text' name="detail_buttonTexe" value='' required='')
+              input#detail_buttonTexe.form-control.form-bind-data(type='text' name="detail_buttonTexe" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -89,7 +89,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_exampleDetail') 範例描述細節
-              textarea#detail_exampleDetail.form-control(type='text' name="detail_exampleDetail" value='' required='')
+              textarea#detail_exampleDetail.form-control.form-bind-data(type='text' name="detail_exampleDetail" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -97,7 +97,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_exampleTitle') 範例描述標題
-              input#detail_exampleTitle.form-control(type='text' name="detail_exampleTitle" value='' required='')
+              input#detail_exampleTitle.form-control.form-bind-data(type='text' name="detail_exampleTitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -106,7 +106,7 @@ block body
             .col-md-12
               label.form-label(for='detail_featureBullets') 特色
                 span.remark 多個請用逗號隔開(,)
-              textarea#detail_featureBullets.form-control(type='text' name="detail_featureBullets" value='' required='')
+              textarea#detail_featureBullets.form-control.form-bind-data(type='text' name="detail_featureBullets" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -114,7 +114,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_featuresTitle') 特點標題名稱
-              input#detail_featuresTitle.form-control(type='text' name="detail_featuresTitle" value='' required='')
+              input#detail_featuresTitle.form-control.form-bind-data(type='text' name="detail_featuresTitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -123,7 +123,7 @@ block body
             .col-md-12
               label.form-label(for='icon') 照片
               input.form-control(type='file' value='' imgClass="icon")
-              input#icon.form-control(type='hidden' name="icon" value='' required='')
+              input#icon.form-control.form-bind-data(type='hidden' name="icon" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

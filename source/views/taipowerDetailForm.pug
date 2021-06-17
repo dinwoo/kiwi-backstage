@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='title') 標題
-              input#title.form-control(type='text' name="title" value='' required='')
+              input#title.form-control.form-bind-data(type='text' name="title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='subtitle') 子標題
-              input#subtitle.form-control(type='text' name="subtitle" value='' required='')
+              input#subtitle.form-control.form-bind-data(type='text' name="subtitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -40,7 +40,7 @@ block body
             .col-md-12
               label.form-label(for='img') 照片
               input.form-control(type='file' value='' imgClass="img")
-              input#img.form-control(type='hidden' name="img" value='' required='')
+              input#img.form-control.form-bind-data(type='hidden' name="img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

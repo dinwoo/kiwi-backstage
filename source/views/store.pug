@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='general_title') 標題
-              input#general_title.form-control(type='text' name="general_title" value='' required='')
+              input#general_title.form-control.form-bind-data(type='text' name="general_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -33,7 +33,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='form_title') 標題
-              input#form_title.form-control(type='text' name="form_title" value='' required='')
+              input#form_title.form-control.form-bind-data(type='text' name="form_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -41,7 +41,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='form_description') 描述
-              input#form_description.form-control(type='text' name="form_description" value='' required='')
+              input#form_description.form-control.form-bind-data(type='text' name="form_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -51,7 +51,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='why_title') 標題
-              input#why_title.form-control(type='text' name="why_title" value='' required='')
+              input#why_title.form-control.form-bind-data(type='text' name="why_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -59,7 +59,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='why_description') 描述
-              input#why_description.form-control(type='text' name="why_description" value='' required='')
+              input#why_description.form-control.form-bind-data(type='text' name="why_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -68,7 +68,7 @@ block body
             .col-md-12
               label.form-label(for='why_img') 圖片
               input.form-control(type='file' value='' imgClass="why_img")
-              input#why_img.form-control(type='hidden' name="why_img" value='' required='')
+              input#why_img.form-control.form-bind-data(type='hidden' name="why_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

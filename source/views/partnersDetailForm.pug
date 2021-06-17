@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='name') 名稱
-              input#name.form-control(type='text' name="name" value='' required='')
+              input#name.form-control.form-bind-data(type='text' name="name" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -32,7 +32,7 @@ block body
             .col-md-12
               label.form-label(for='img') 照片
               input.form-control(type='file' value='' imgClass="img")
-              input#img.form-control(type='hidden' name="img" value='' required='')
+              input#img.form-control.form-bind-data(type='hidden' name="img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

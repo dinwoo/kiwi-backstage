@@ -4,7 +4,7 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/sourceDetailForm.js")
+  script(src="./js/form.js")
   
 //- block head
 //-   include ../components/Header.pug
@@ -16,22 +16,16 @@ block body
   article.source-detail-form-page
     h1 SourceDetail
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="sourceDetail")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper
         //- h3 meta
         .content
           .form-row
             .col-md-12
-              label.form-label(for='description') 描述
-              input#description.form-control(type='text' name="description" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='location') 地點
-              input#location.form-control(type='text' name="location" value='' required='')
+              label.form-label(for='isEnable') 是否啟用
+              select#isEnable.form-select(name="isEnable" required='')
+                option(value=1) 啟用
+                option(value=0) 不啟用
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +33,23 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='name') 名稱
-              input#name.form-control(type='text' name="name" value='' required='')
+              input#name.form-control.form-bind-data(type='text' name="name" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='description') 描述
+              input#description.form-control.form-bind-data(type='text' name="description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='location') 地點
+              input#location.form-control.form-bind-data(type='text' name="location" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -48,12 +58,14 @@ block body
             .col-md-12
               label.form-label(for='img') 照片
               input.form-control(type='file' value='' imgClass="img")
-              input#img.form-control(type='hidden' name="img" value='' required='')
+              input#img.form-control.form-bind-data(type='hidden' name="img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
                 | 不得為空
               img.file-img.img(src="")
+      .page-data(data-apiUrl="/api/v1/index/source/detail" data-nextTo="sourceDetail.html")
+      input.form-control.form-bind-data(type='hidden' name="id" value='' required='')
       button.btn.btn-primary(type='submit') Submit form
 
 

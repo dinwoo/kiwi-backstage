@@ -33,7 +33,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='currentTitle') 開始標題名稱
-              input#currentTitle.form-control(type='text' name="currentTitle" value='' required='')
+              input#currentTitle.form-control.form-bind-data(type='text' name="currentTitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -41,7 +41,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='endedTitle') 結束標題名稱
-              input#endedTitle.form-control(type='text' name="endedTitle" value='' required='')
+              input#endedTitle.form-control.form-bind-data(type='text' name="endedTitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

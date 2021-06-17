@@ -33,7 +33,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='id') 事件代號
-              input#id.form-control(type='text' name="id" value='' required='')
+              input#id.form-control.form-bind-data(type='text' name="id" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -42,7 +42,7 @@ block body
             .col-md-12
               label.form-label(for='general_img') 活動圖片
               input.form-control(type='file' value='' imgClass="general_img")
-              input#general_img.form-control(type='hidden' name="general_img" value='' required='')
+              input#general_img.form-control.form-bind-data(type='hidden' name="general_img" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -53,7 +53,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='cta_buttonText') 按鈕顯示文字
-              input#cta_buttonText.form-control(type='text' name="cta_buttonText" value='' required='')
+              input#cta_buttonText.form-control.form-bind-data(type='text' name="cta_buttonText" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -61,7 +61,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='cta_buttonUrl') 網址
-              input#cta_buttonUrl.form-control(type='text' name="cta_buttonUrl" value='' required='')
+              input#cta_buttonUrl.form-control.form-bind-data(type='text' name="cta_buttonUrl" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -69,7 +69,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='cta_previewButtonTex') 查看按鈕顯示文字
-              input#cta_previewButtonTex.form-control(type='text' name="cta_previewButtonTex" value='' required='')
+              input#cta_previewButtonTex.form-control.form-bind-data(type='text' name="cta_previewButtonTex" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -77,7 +77,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='cta_previewButtonUrl') 查看按鈕網址
-              input#cta_previewButtonUrl.form-control(type='text' name="cta_previewButtonUrl" value='' required='')
+              input#cta_previewButtonUrl.form-control.form-bind-data(type='text' name="cta_previewButtonUrl" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -87,7 +87,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_title') 標題
-              input#detail_title.form-control(type='text' name="detail_title" value='' required='')
+              input#detail_title.form-control.form-bind-data(type='text' name="detail_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -95,7 +95,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='detail_description') 描述
-              input#detail_description.form-control(type='text' name="detail_description" value='' required='')
+              input#detail_description.form-control.form-bind-data(type='text' name="detail_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -105,7 +105,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='notice_title') 標題
-              input#notice_title.form-control(type='text' name="notice_title" value='' required='')
+              input#notice_title.form-control.form-bind-data(type='text' name="notice_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -113,7 +113,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='notice_description') 描述
-              input#notice_description.form-control(type='text' name="notice_description" value='' required='')
+              input#notice_description.form-control.form-bind-data(type='text' name="notice_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -123,7 +123,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='precaution_title') 標題
-              input#precaution_title.form-control(type='text' name="precaution_title" value='' required='')
+              input#precaution_title.form-control.form-bind-data(type='text' name="precaution_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -131,7 +131,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='precaution_descriptiontitle') 描述標題
-              input#precaution_descriptiontitle.form-control(type='text' name="precaution_descriptiontitle" value='' required='')
+              input#precaution_descriptiontitle.form-control.form-bind-data(type='text' name="precaution_descriptiontitle" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -139,7 +139,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='precaution_description') 描述
-              input#precaution_description.form-control(type='text' name="precaution_description" value='' required='')
+              input#precaution_description.form-control.form-bind-data(type='text' name="precaution_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -149,7 +149,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='time_startTime') 開始時間
-              input#time_startTime.form-control(type='date' name="time_startTime" value='' required='')
+              input#time_startTime.form-control.form-bind-data(type='date' name="time_startTime" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -157,7 +157,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='time_endTime') 結束時間
-              input#time_endTime.form-control(type='date' name="time_endTime" value='' required='')
+              input#time_endTime.form-control.form-bind-data(type='date' name="time_endTime" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -167,7 +167,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='tutorial_title') 標題
-              input#tutorial_title.form-control(type='text' name="tutorial_title" value='' required='')
+              input#tutorial_title.form-control.form-bind-data(type='text' name="tutorial_title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -175,7 +175,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='tutorial_description') 描述
-              input#tutorial_description.form-control(type='text' name="tutorial_description" value='' required='')
+              input#tutorial_description.form-control.form-bind-data(type='text' name="tutorial_description" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

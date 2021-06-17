@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='link') 連結
-              input#link.form-control(type='text' name="link" value='' required='')
+              input#link.form-control.form-bind-data(type='text' name="link" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='text') 描述
-              textarea#text.form-control(type='text' name="text" value='' required='')
+              textarea#text.form-control.form-bind-data(type='text' name="text" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback

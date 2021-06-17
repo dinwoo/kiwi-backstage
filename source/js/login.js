@@ -51,6 +51,7 @@
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            form.classList.add('was-validated')
           }else{
             console.log("OK")
             event.preventDefault()
@@ -58,7 +59,6 @@
             login()
           }
 
-          form.classList.add('was-validated')
         }, false)
       })
     

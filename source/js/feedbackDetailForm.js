@@ -1,27 +1,10 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
-  let isAdd;
-
-  $.mockjax({
-      url:apiDomain+ 'api/getForm',
-      status: 200,
-      responseTime: 750,         
-      responseText: {
-        "success":true,
-        "errorCode":200,
-        "data":{
-          avatar:'照片api',
-          name:'姓名api',
-          personaType:'性質api',
-          rating: 2.6,
-          text:'敘述api',
-        }
-      }
-  });
+  let isCreate;
 
   function getForm() {
     $.ajax({
-      url: apiDomain+'api/getForm',
+      url: `${apiDomain}/api/v1/index/feedback/detail/${getUrlQuery('id')}`,
       type: 'get',
       data:{
       },
@@ -41,20 +24,28 @@
       console.log(key)
       console.log(data[key])
       $(`#${key}`).val(data[key])
+      $(`.${key}`).attr('src',data[key])
     }
     bindEvent({
-      isAdd,
-      apiUrl:`feedbackDetailFormUrl`
+      isCreate,
+      apiUrl:`/api/v1/index/feedback/detail`,
+      nextTo: 'feedbackDetail.html'
     });
   }
   
   $(document).ready(function () {
 
     if(getUrlQuery('id')){
-      isAdd = false;
+      isCreate = false;
       getForm();
+      $("input[name='id']").val(getUrlQuery('id'))
     }else{
-      isAdd = true;
+      isCreate = true;
+      bindEvent({
+        isCreate,
+        apiUrl:`/api/v1/index/feedback/detail`,
+        nextTo: 'feedbackDetail.html'
+      });
     }
     
   })

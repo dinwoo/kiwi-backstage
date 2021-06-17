@@ -23,7 +23,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='text') 內容
-              input#text.form-control(type='text' name="text" value='' required='')
+              input#text.form-control.form-bind-data(type='text' name="text" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -31,7 +31,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='value') 值
-              input#value.form-control(type='text' name="value" value='' required='')
+              input#value.form-control.form-bind-data(type='text' name="value" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -39,7 +39,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='url') 網址
-              input#url.form-control(type='text' name="url" value='' required='')
+              input#url.form-control.form-bind-data(type='text' name="url" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
