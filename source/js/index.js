@@ -20,16 +20,19 @@
   // });
 
   function getForm() {
+    $('body').LoadingOverlay("show");
     $.ajax({
       url: apiDomain+'/api/v1/index/publish',
       type: 'get',
       data:{
       },
       success: function (res) {
+        $('body').LoadingOverlay("hide");
         console.log(res);
         setForm(res.data)
       },
       error: function (xhr) {
+        $('body').LoadingOverlay("hide");
         console.log(xhr)
       }
     });

@@ -8,16 +8,19 @@
   console.log(nextTo)
 
   function getForm() {
+    $('body').LoadingOverlay("show");
     $.ajax({
-      url: `${apiDomain}${apiUrl}${isMainPage?'':'/'+getUrlQuery('id')}`,
+      url: `${apiDomain}${apiUrl}${isMainPage?'/publish':'/'+getUrlQuery('id')}`,
       type: 'get',
       data:{
       },
       success: function (res) {
+        $('body').LoadingOverlay("hide");
         console.log(res);
         setForm(res.data)
       },
       error: function (xhr) {
+        $('body').LoadingOverlay("hide");
         console.log(xhr)
       }
     });
@@ -41,7 +44,8 @@
     }
     bindEvent({
       isCreate,
-      apiUrl:apiUrl,
+      isMainPage,
+      apiUrl:`${apiUrl}${isMainPage?'/create/publish':''}`,
       nextTo: nextTo
     });
   }

@@ -148,18 +148,23 @@ h2
         transition: .3s
         p
           font-size: 1rem
-        &:hover,&.active
+          text-decoration: none
+        &:hover
           color: #333
           background-color: #fff
-          text-decoration: none
+        &.active
+          color: #333
+          background-color: #fff
+          & + .sub-list
+            display: block
       .sub-list
+        display: none
+        &.active
+          display: block
         a.link
           padding: 5px 0px 5px 20px
           p
             font-size: 0.8rem
-
-
-
 
 
 .body-wrapper

@@ -6,6 +6,9 @@ block pageCSS
 block pageJs
   script(src="./js/form.js")
   
+block pageType
+  - var page = 'feedback'
+  
 //- block head
 //-   include ../components/Header.pug
 
@@ -65,7 +68,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='avatar') 照片
-              input.form-control(type='file' value='' imgClass="avatar")
+              input.form-control(type='file' value='' imgClass="avatar" required)
               input#avatar.form-control.form-bind-data(type='hidden' name="avatar" value='' required='')
               .valid-feedback
                 | OK!

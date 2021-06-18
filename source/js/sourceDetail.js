@@ -2,17 +2,20 @@
 (function () {
 
   function getList() {
+    $('body').LoadingOverlay("show");
     $.ajax({
       url: apiDomain+'/api/v1/index/source/detail/all',
       type: 'get',
       data:{
       },
       success: function (res) {
+        $('body').LoadingOverlay("hide");
         // console.log(res);
         showList(res.data)
         bindEvent()
       },
       error: function (xhr) {
+        $('body').LoadingOverlay("hide");
         console.log(xhr)
       }
     });
@@ -51,7 +54,7 @@
       if(isDelete){
         // alert("已刪除")
         deleteApi({
-          apiUrl:`/api/v1/index/media/detail`,
+          apiUrl:`/api/v1/index/source/detail`,
           id:$(this).data('key')
         })
       }else{

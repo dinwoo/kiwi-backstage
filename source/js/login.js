@@ -20,6 +20,7 @@
     console.log('formfata:'+json);
     console.log(JSON.stringify(json));
 
+    $('body').LoadingOverlay("show");
     $.ajax({
       url: `${apiDomain}${url}`,
       type: method,
@@ -27,6 +28,7 @@
       contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
       data: json,
     }).done(function (data) {
+      $('body').LoadingOverlay("hide");
       console.log(data);
       if(data.code==200){
         localStorage.setItem('user', data.data);
@@ -35,6 +37,7 @@
         alert(data.message)
       }
     }).fail(function (res) {
+      $('body').LoadingOverlay("hide");
       console.log(res);
       alert('操作失敗');
     });

@@ -2,52 +2,52 @@
   .sidebar-title kiwi-backstage
   hr
   .box
-    a.link.active(href="./index.html") 
+    a.link(href="./index.html" class=(page === 'index') ? "active" : "" ) 
       p Index
-    .sub-list
-      a.link(href="./feedbackDetail.html") 
+    .sub-list(class=(page === 'feedback'||page === 'media'||page === 'source'||page === 'taipower'||page === 'newsFlash'||page === 'faq'||page === 'partners'||page === 'persona'||page === 'promo') ? "active" : "") 
+      a.link(href="./feedbackDetail.html" class=(page === 'feedback') ? "active" : "") 
         p FeedbackDetail
-      a.link(href="./mediaData.html") 
+      a.link(href="./mediaData.html" class=(page === 'media') ? "active" : "") 
         p MediaData
-      a.link(href="./sourceDetail.html") 
+      a.link(href="./sourceDetail.html" class=(page === 'source') ? "active" : "") 
         p SourceDetail
-      a.link(href="./taipowerDetail.html") 
+      a.link(href="./taipowerDetail.html" class=(page === 'taipower') ? "active" : "") 
         p TaipowerDetail
-      a.link(href="./newsFlashDetail.html") 
+      a.link(href="./newsFlashDetail.html" class=(page === 'newsFlash') ? "active" : "") 
         p NewsFlashDetail
-      a.link(href="./faqDetail.html") 
+      a.link(href="./faqDetail.html" class=(page === 'faq') ? "active" : "") 
         p FaqDetail
-      a.link(href="./partnersDetail.html") 
+      a.link(href="./partnersDetail.html" class=(page === 'partners') ? "active" : "") 
         p PartnersDetail
-      a.link(href="./personaTabDetail.html") 
+      a.link(href="./personaTabDetail.html" class=(page === 'persona') ? "active" : "") 
         p PersonaTabDetail
-      a.link(href="./promoOptionDetail.html") 
+      a.link(href="./promoOptionDetail.html" class=(page === 'promo') ? "active" : "") 
         p PromoOptionDetail
-    a.link(href="./about.html") 
+    a.link(href="./about.html" class=(page === 'about') ? "active" : "") 
       p About
-    a.link(href="./corporate.html") 
+    a.link(href="./corporate.html" class=(page === 'corporate') ? "active" : "") 
       p Corporate
-    a.link(href="./feature.html") 
+    a.link(href="./feature.html" class=(page === 'feature') ? "active" : "") 
       p Feature
-    a.link(href="./campaigns.html") 
+    a.link(href="./campaigns.html" class=(page === 'campaigns') ? "active" : "") 
       p Campaigns
-    .sub-list
-      a.link(href="./campaignsDetail.html") 
+    .sub-list(class=(page === 'campaignsDetail') ? "active" : "") 
+      a.link(href="./campaignsDetail.html" class=(page === 'campaignsDetail') ? "active" : "") 
         p CampaignsDetail
-    a.link(href="./greenPower.html") 
+    a.link(href="./greenPower.html" class=(page === 'greenPower') ? "active" : "") 
       p GreenPower
-    .sub-list
-      a.link(href="./greenPowerDetail.html") 
+    .sub-list(class=(page === 'greenPowerDetail') ? "active" : "") 
+      a.link(href="./greenPowerDetail.html" class=(page === 'greenPowerDetail') ? "active" : "") 
         p GreenPowerDetail
-    a.link(href="./report.html") 
+    a.link(href="./report.html" class=(page === 'report') ? "active" : "") 
       p Report
-    a.link(href="./store.html") 
+    a.link(href="./store.html" class=(page === 'store') ? "active" : "") 
       p Store
-    a.link(href="./header.html") 
+    a.link(href="./header.html" class=(page === 'header') ? "active" : "") 
       p Header
-    a.link(href="./footer.html") 
+    a.link(href="./footer.html" class=(page === 'footer') ? "active" : "") 
       p Footer
-    a.link(href="./unload.html") 
+    a.link(href="./unload.html" class=(page === 'unload') ? "active" : "") 
       p Unload
 
 

@@ -4,10 +4,10 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/promoOptionDetail.js")
+  script(src="./js/faqDetail.js")
   
 block pageType
-  - var page = 'promo'
+  - var page = 'faq'
   
 //- block head
 //-   include ../components/Header.pug
@@ -16,8 +16,8 @@ block pageType
 //-   include ../components/Footer.pug
 
 block body
-  article.promo-option-detail-page
-    h1 promo-option-detail
+  article.feedback-detail-page
+    h1 feedback-detail
     .btn.add-btn.btn-primary 新增
     hr
     table.table.table-striped
@@ -25,11 +25,11 @@ block body
         tr
           th(scope='col') *
           th(scope='col') 照片
-          th(scope='col') 描述
-          th(scope='col') 出處
-          th(scope='col') 日期
-          th(scope='col') 連結
-          th(scope='col') 標題
+          th(scope='col') 姓名
+          th(scope='col') 性質
+          th(scope='col') 評分分數
+          th(scope='col') 敘述
+          th(scope='col') 是否啟用
           th(scope='col') 
       tbody
         //- tr

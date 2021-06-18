@@ -7,8 +7,8 @@ let apiUrl = '';
 function sendFormData(data) {
   // console.log(data)
   apiUrl = data.apiUrl;
-  let isCreate = data.isCreate?'create':"update";
-  let method = data.isCreate?'post':"put";
+  let isCreate = data.isMainPage?"":data.isCreate?'/create':"/update";
+  let method = data.isCreate||data.isMainPage?'post':"put";
 
   // let dataForm = document.getElementById('dataForm');
   // let formData = new FormData(dataForm);
@@ -45,17 +45,20 @@ function sendFormData(data) {
   }
   console.log(formData)
     
+  $('body').LoadingOverlay("show");
 
   $.ajax({
-    url: `${apiDomain}${apiUrl}/${isCreate}`,
+    url: `${apiDomain}${apiUrl}${isCreate}`,
     type: method,
     dataType : 'json', // 預期從server接收的資料型態
     contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
     data: JSON.stringify(formData),
   }).done(function (res) {
+    $('body').LoadingOverlay("hide");
     console.log(res);
     window.location.href = data.nextTo;
   }).fail(function (res) {
+    $('body').LoadingOverlay("hide");
     console.log(res);
     alert('操作失敗');
   });
@@ -107,6 +110,7 @@ function uploadFile(fileInput) {
 
   var settings = {
   };
+  $('body').LoadingOverlay("show");
 
   $.ajax({
     "url": "http://kiwi.ponitor.com.tw/api/v1/file/upload",
@@ -117,26 +121,31 @@ function uploadFile(fileInput) {
     "contentType": false,
     "data": form
   }).done(function (data) {
+    $('body').LoadingOverlay("hide");
     fileInput.nextElementSibling.value=JSON.parse(data).data.img
     console.log($(`.${$(fileInput).attr('imgClass')}`))
     $(fileInput).parent('.col-md-12').find(`.${$(fileInput).attr('imgClass')}`).attr('src',JSON.parse(data).data.img)
     return JSON.parse(data).data.img
   }).fail(function (res) {
+    $('body').LoadingOverlay("hide");
     console.log(res);
     alert('操作失敗');
   });
 }
 
 function deleteApi(params) {
+  $('body').LoadingOverlay("show");
   $.ajax({
     url: `${apiDomain}${params.apiUrl}/${params.id}`,
     type: 'delete',
     dataType : 'json', // 預期從server接收的資料型態
     contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
   }).done(function (res) {
+    $('body').LoadingOverlay("hide");
     console.log(res);
     location.reload();
   }).fail(function (res) {
+    $('body').LoadingOverlay("hide");
     console.log(res);
     alert('操作失敗');
   });
@@ -144,6 +153,7 @@ function deleteApi(params) {
 
 $(document).ready(function () {
   let user = localStorage.getItem('user');
+
   // console.log(user)
   if(user==null&&window.location.pathname.indexOf('login.html')<0){
     window.location.href = `login.html`;

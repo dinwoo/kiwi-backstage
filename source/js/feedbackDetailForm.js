@@ -3,16 +3,19 @@
   let isCreate;
 
   function getForm() {
+    $('body').LoadingOverlay("show");
     $.ajax({
       url: `${apiDomain}/api/v1/index/feedback/detail/${getUrlQuery('id')}`,
       type: 'get',
       data:{
       },
       success: function (res) {
+        $('body').LoadingOverlay("hide");
         console.log(res);
         setForm(res.data)
       },
       error: function (xhr) {
+        $('body').LoadingOverlay("hide");
         console.log(xhr)
       }
     });
