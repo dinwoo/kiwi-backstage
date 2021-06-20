@@ -4,7 +4,7 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/taipowerDetailForm.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'taipower'
@@ -19,10 +19,20 @@ block body
   article.taipower-detail-form-page
     h1 TaipowerDetail
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="taipowerDetail")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper
         //- h3 meta
         .content
+          .form-row
+            .col-md-12
+              label.form-label(for='isEnable') 是否啟用
+              select#isEnable.form-select(name="isEnable" required='')
+                option(value=1) 啟用
+                option(value=0) 不啟用
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
           .form-row
             .col-md-12
               label.form-label(for='title') 標題
@@ -49,6 +59,8 @@ block body
               .invalid-feedback
                 | 不得為空
               img.file-img.img(src="")
+      .page-data(data-apiUrl="/api/v1/index/taipower/detail" data-nextTo="taipowerDetail.html")
+      input.form-control.form-bind-data(type='hidden' name="id" value='' required='')
       button.btn.btn-primary(type='submit') Submit form
 
 

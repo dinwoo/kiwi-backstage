@@ -19,7 +19,7 @@ block body
   article.feedback-detail-form-page
     h1 feedbackDetail
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="" action="")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper
         //- h3 meta
         .content
@@ -68,7 +68,7 @@ block body
           .form-row
             .col-md-12
               label.form-label(for='avatar') 照片
-              input.form-control(type='file' value='' imgClass="avatar" required)
+              input.form-control(type='file' value='' imgClass="avatar")
               input#avatar.form-control.form-bind-data(type='hidden' name="avatar" value='' required='')
               .valid-feedback
                 | OK!

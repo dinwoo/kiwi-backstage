@@ -4,7 +4,7 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/newsFlashDetailForm.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'newsFlash'
@@ -19,7 +19,7 @@ block body
   article.news-flash-detail-form-page
     h1 NewsFlashDetail
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="newsFlashDetail")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper
         //- h3 meta
         .content
@@ -39,6 +39,8 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
+      .page-data(data-apiUrl="/api/v1/index/newsflash/detail" data-nextTo="newsflashDetail.html")
+      input.form-control.form-bind-data(type='hidden' name="id" value='' required='')
       button.btn.btn-primary(type='submit') Submit form
 
 

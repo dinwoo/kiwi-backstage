@@ -19,7 +19,7 @@ block body
   article.about-page
     h1 About
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="about")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper.c-2
         .content
           h3 meta
@@ -107,6 +107,28 @@ block body
               .invalid-feedback
                 | 不得為空
               img.file-img.splashImg(src="")
+        .content
+          h3 year
+          .form-row
+            .col-md-12
+              label.form-label(for='year_title') 年份標題
+              input#year_title.form-control.form-bind-data(type='text' name="year_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .items-title year_itmes
+            .items-box(data-itemKey="vision_items")
+              .items
+                .col-md-12
+                  label.form-label 標題
+                  input.form-control.form-bind-items-data(type='text' name="vision_items_title" value='items1' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+            .btn-add.btn.btn-sm.btn-primary(data-copy="vision_items") 新增
       button.btn.btn-primary(type='submit') Submit form
 
 

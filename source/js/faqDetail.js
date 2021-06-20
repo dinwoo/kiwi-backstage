@@ -4,7 +4,7 @@
   function getList() {
     $('body').LoadingOverlay("show");
     $.ajax({
-      url: apiDomain + '/api/v1/index/media/detail/all',
+      url: apiDomain + '/api/v1/index/faq/detail/all',
       type: 'get',
       data: {
       },
@@ -29,11 +29,8 @@
         <tr>
           <td scope="row">${parseInt(i) + 1}</td>
           <td>${data[i].title}</td>
-          <td>${data[i].excerpt}</td>
-          <td>${data[i].source}</td>
-          <td>${data[i].url}</td>
-          <td>${data[i].time}</td>
-          <td><img src="${data[i].img}"></td>
+          <td>${data[i].content}</td>
+          <td>${data[i].order}</td>
           <td>${data[i].isEnable ? '是' : '否'}</td>
           <td>
             <div class="btn edit-btn btn-primary" data-key="${data[i].id}">修改</div>
@@ -48,7 +45,7 @@
   function bindEvent() {
     $('.edit-btn').on('click', function () {
       // console.log($(this).data('key'))
-      window.location.href = `mediaDataForm.html?id=${$(this).data('key')}`;
+      window.location.href = `faqDetailForm.html?id=${$(this).data('key')}`;
     })
     $('.delete-btn').on('click', function () {
       // console.log($(this).data('key'))
@@ -56,7 +53,7 @@
       if (isDelete) {
         // alert("已刪除")
         deleteApi({
-          apiUrl: `/api/v1/index/media/detail`,
+          apiUrl: `/api/v1/index/faq/detail`,
           id: $(this).data('key')
         })
       } else {
@@ -69,7 +66,7 @@
     getList();
     $('.add-btn').on('click', function () {
       // console.log($(this).data('key'))
-      window.location.href = `mediaDataForm.html`;
+      window.location.href = `faqDetailForm.html`;
     })
 
 

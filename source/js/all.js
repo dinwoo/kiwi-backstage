@@ -1,14 +1,15 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-let apiDomain= 'http://kiwi.ponitor.com.tw';
+let apiDomain = 'http://kiwi.ponitor.com.tw';
 let isPreview = false;
+let isPublish;
 let apiUrl = '';
 
 
 function sendFormData(data) {
   // console.log(data)
   apiUrl = data.apiUrl;
-  let isCreate = data.isMainPage?"":data.isCreate?'/create':"/update";
-  let method = data.isCreate||data.isMainPage?'post':"put";
+  let isCreate = data.isMainPage ? "" : data.isCreate ? '/create' : "/update";
+  let method = data.isCreate || data.isMainPage ? 'post' : "put";
 
   // let dataForm = document.getElementById('dataForm');
   // let formData = new FormData(dataForm);
@@ -19,39 +20,42 @@ function sendFormData(data) {
   // let json = JSON.stringify(object);
   // console.log('formfata:'+json);
 
-  
+
   let formData = {};
-  for(let i=0;i<$('.form-bind-data').length;i++){
-    formData[$('.form-bind-data').eq(i).attr('name')]=$('.form-bind-data').eq(i).val()
+  if(data.isMainPage){
+    formData.isPublish=isPublish
+    formData.isDraft=!isPublish
+  }
+  for (let i = 0; i < $('.form-bind-data').length; i++) {
+    formData[$('.form-bind-data').eq(i).attr('name')] = $('.form-bind-data').eq(i).val()
   }
 
   // 抓items用的
   for (let i = 0; i < $('.items-box').length; i++) {
     // 將每個items-box抓出來，宣告陣列
     let itemBoxKey = $('.items-box').eq(i).attr('data-itemKey')
-    formData[itemBoxKey]=[]
+    formData[itemBoxKey] = []
     for (let j = 0; j < $('.items-box').eq(i).find('.items').length; j++) {
       // 將items-box裡面有幾個items抓出來，並宣告物件
-      formData[itemBoxKey][j]={}
+      formData[itemBoxKey][j] = {}
       let formBindItems = $('.items-box').eq(i).find('.items').eq(j).find('.form-bind-items-data')
       for (let k = 0; k < formBindItems.length; k++) {
         // 抓出items裡面有幾個需綁定的.form-bind-items-data，並綁定到該位置
-        formData[itemBoxKey][j][formBindItems.eq(k).attr('name')]=formBindItems.eq(k).val()
+        formData[itemBoxKey][j][formBindItems.eq(k).attr('name')] = formBindItems.eq(k).val()
       }
     }
   }
-  for(let i=0;i<$('select').length;i++){
-    formData[$('select').eq(i).attr('name')]=parseInt($('select').eq(i).val())?true:false;
+  for (let i = 0; i < $('select').length; i++) {
+    formData[$('select').eq(i).attr('name')] = parseInt($('select').eq(i).val()) ? true : false;
   }
   console.log(formData)
-    
-  $('body').LoadingOverlay("show");
 
+  $('body').LoadingOverlay("show");
   $.ajax({
     url: `${apiDomain}${apiUrl}${isCreate}`,
     type: method,
-    dataType : 'json', // 預期從server接收的資料型態
-    contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
+    dataType: 'json', // 預期從server接收的資料型態
+    contentType: 'application/json; charset=utf-8', // 要送到server的資料型態
     data: JSON.stringify(formData),
   }).done(function (res) {
     $('body').LoadingOverlay("hide");
@@ -76,11 +80,10 @@ function bindEvent(data) {
           event.preventDefault()
           event.stopPropagation()
           form.classList.add('was-validated')
-        }else{
+        } else {
           console.log("OK")
           event.preventDefault()
           event.stopPropagation()
-          console.log(isPreview)
           sendFormData(data)
         }
 
@@ -92,11 +95,11 @@ function getUrlQuery(key) {
   let url = location.href;
   let val = "";
 
-  if(url.indexOf('?')!=-1){
+  if (url.indexOf('?') != -1) {
     let ary = url.split('?')[1].split('&');
 
-    for(let i=0;i<=ary.length-1;i++){
-      if(ary[i].split('=')[0] == key){
+    for (let i = 0; i <= ary.length - 1; i++) {
+      if (ary[i].split('=')[0] == key) {
         val = ary[i].split('=')[1];
       }
     }
@@ -105,8 +108,9 @@ function getUrlQuery(key) {
 }
 
 function uploadFile(fileInput) {
+  if (!fileInput.files[0]) return false
   var form = new FormData();
-  form.append("file", fileInput.files[0], "json.png");
+  form.append("file", fileInput.files[0], fileInput.files[0].name);
 
   var settings = {
   };
@@ -122,9 +126,10 @@ function uploadFile(fileInput) {
     "data": form
   }).done(function (data) {
     $('body').LoadingOverlay("hide");
-    fileInput.nextElementSibling.value=JSON.parse(data).data.img
+    $(fileInput).attr('required', false)
+    fileInput.nextElementSibling.value = JSON.parse(data).data.img
     console.log($(`.${$(fileInput).attr('imgClass')}`))
-    $(fileInput).parent('.col-md-12').find(`.${$(fileInput).attr('imgClass')}`).attr('src',JSON.parse(data).data.img)
+    $(fileInput).parent('.col-md-12').find(`.${$(fileInput).attr('imgClass')}`).attr('src', JSON.parse(data).data.img)
     return JSON.parse(data).data.img
   }).fail(function (res) {
     $('body').LoadingOverlay("hide");
@@ -138,8 +143,8 @@ function deleteApi(params) {
   $.ajax({
     url: `${apiDomain}${params.apiUrl}/${params.id}`,
     type: 'delete',
-    dataType : 'json', // 預期從server接收的資料型態
-    contentType : 'application/json; charset=utf-8', // 要送到server的資料型態
+    dataType: 'json', // 預期從server接收的資料型態
+    contentType: 'application/json; charset=utf-8', // 要送到server的資料型態
   }).done(function (res) {
     $('body').LoadingOverlay("hide");
     console.log(res);
@@ -154,26 +159,27 @@ function deleteApi(params) {
 $(document).ready(function () {
   let user = localStorage.getItem('user');
 
-  // console.log(user)
-  if(user==null&&window.location.pathname.indexOf('login.html')<0){
+  if (user == null && window.location.pathname.indexOf('login.html') < 0) {
     window.location.href = `login.html`;
+  } else {
+    $('header .user-name span').text(user)
   }
 
-  $("input[type='file']").on('change',function () {
+  $("input[type='file']").on('change', function () {
     console.log("upload file")
     uploadFile($(this)[0])
   })
 
-  $('header .logout').on('click',function () {
+  $('header .logout').on('click', function () {
     localStorage.removeItem('user');
     window.location.href = `login.html`;
   })
 
-  $('.btn-add').on('click',function () {
+  $('.btn-add').on('click', function () {
     // console.log($(`.hidde-box .${$(this).data('copy')}`).html())
     // console.log($(this).prev('.items-box'))
     $(this).prev('.items-box').append($(`.hidde-box .${$(this).data('copy')}`).html())
-    $("input[type='file']").on('change',function () {
+    $("input[type='file']").on('change', function () {
       // console.log("upload file")
       uploadFile($(this)[0])
     })

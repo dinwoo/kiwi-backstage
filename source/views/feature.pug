@@ -4,7 +4,7 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/feature.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'feature'
@@ -19,7 +19,7 @@ block body
   article.feature-page
     h1 Feature
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="feature")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper.c-2
         .content
           h3 meta
@@ -67,9 +67,125 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-      button.btn.btn-primary(type='submit') Submit form
+                
+        .content
+          h3 feature
+          .form-row
+            .col-md-12
+              label.form-label(for='feature_title') 標題
+              input#feature_title.form-control.form-bind-data(type='text' name="feature_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .items-title feature_items
+            .items-box#feature_items(data-itemKey="feature_items")
+              .items
+                .col-md-12
+                  label.form-label 標題
+                  input.form-control.form-bind-items-data(type='text' name="feature_item_title" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+                .col-md-12
+                  label.form-label 子標題
+                  input.form-control.form-bind-items-data(type='text' name="feature_item_subtitle" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+                .col-md-12
+                  label.form-label 圖片
+                  input.form-control(type='file' value='' imgClass="feature_item_img")
+                  input.form-control.form-bind-items-data(type='hidden' name="feature_item_img" value='' required='')
+                  img.file-img.feature_item_img(src="")
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+            .btn-add.btn.btn-sm.btn-primary(data-copy="feature_items") 新增
+        .content
+          h3 tutorial
+          .form-row
+            .col-md-12
+              label.form-label(for='tutorial_title') 標題
+              input#tutorial_title.form-control.form-bind-data(type='text' name="tutorial_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .items-title tutorial_items
+            .items-box#tutorial_items(data-itemKey="tutorial_items")
+              .items
+                .col-md-12
+                  label.form-label 標題
+                  input.form-control.form-bind-items-data(type='text' name="tutorial_item_title" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+                .col-md-12
+                  label.form-label 圖片
+                  input.form-control(type='file' value='' imgClass="tutorial_item_img")
+                  input.form-control.form-bind-items-data(type='hidden' name="tutorial_item_img" value='' required='')
+                  img.file-img.tutorial_item_img(src="")
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+            .btn-add.btn.btn-sm.btn-primary(data-copy="tutorial_items") 新增
+      .page-data(data-apiUrl="/api/v1/feature" data-nextTo="feature.html" data-isMainPage="1")
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.draft.btn.btn-primary(type='submit') preview
 
 
-
+    .hidde-box
+      .feature_items
+        .items
+          .col-md-12
+            label.form-label 標題
+            input.form-control.form-bind-items-data(type='text' name="feature_item_title" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 子標題
+            input.form-control.form-bind-items-data(type='text' name="feature_item_subtitle" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 圖片
+            input.form-control(type='file' value='' imgClass="feature_item_img")
+            input.form-control.form-bind-items-data(type='hidden' name="feature_item_img" value='' required='')
+            img.file-img.feature_item_img(src="")
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+      .tutorial_items
+        .items
+          .col-md-12
+            label.form-label 標題
+            input.form-control.form-bind-items-data(type='text' name="feature_item_title" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 圖片
+            input.form-control(type='file' value='' imgClass="tutorial_item_img")
+            input.form-control.form-bind-items-data(type='hidden' name="tutorial_item_img" value='' required='')
+            img.file-img.tutorial_item_img(src="")
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
 
 

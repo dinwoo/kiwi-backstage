@@ -5,6 +5,7 @@ block pageCSS
 
 block pageJs
   script(src="./js/greenPower.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'greenPower'
@@ -19,7 +20,7 @@ block body
   article.greenPower-page
     h1 GreenPower
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="greenPower")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper.c-2
         .content
           h3 meta
@@ -56,7 +57,7 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-              img.file-img.meta_img(src="")
+              img.file-img.meta_img(src="" style="min-height:20px")
         .content
           h3 general
           .form-row
@@ -99,7 +100,10 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-      button.btn.btn-primary(type='submit') Submit form
+      .page-data(data-apiUrl="/api/v1/campaign" data-nextTo="campaign.html" data-isMainPage="1")
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.draft.btn.btn-primary(type='submit') preview
 
 
 

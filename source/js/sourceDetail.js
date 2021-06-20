@@ -4,9 +4,9 @@
   function getList() {
     $('body').LoadingOverlay("show");
     $.ajax({
-      url: apiDomain+'/api/v1/index/source/detail/all',
+      url: apiDomain + '/api/v1/index/source/detail/all',
       type: 'get',
-      data:{
+      data: {
       },
       success: function (res) {
         $('body').LoadingOverlay("hide");
@@ -20,19 +20,19 @@
       }
     });
   }
-  
+
   function showList(data) {
     let str = '';
     for (let i in data) {
       console.log(data[i])
-      str=`
+      str = `
         <tr>
-          <td scope="row">${parseInt(i)+1}</td>
+          <td scope="row">${parseInt(i) + 1}</td>
           <td>${data[i].name}</td>
           <td>${data[i].description}</td>
           <td>${data[i].location}</td>
           <td><img src="${data[i].img}"></td>
-          <td>${data[i].isEnable?'是':'否'}</td>
+          <td>${data[i].isEnable ? '是' : '否'}</td>
           <td>
             <div class="btn edit-btn btn-primary" data-key="${data[i].id}">修改</div>
             <div class="btn delete-btn btn-danger" data-key="${data[i].id}">刪除</div>
@@ -44,20 +44,20 @@
   }
 
   function bindEvent() {
-    $('.edit-btn').on('click',function () {
+    $('.edit-btn').on('click', function () {
       // console.log($(this).data('key'))
       window.location.href = `sourceDetailForm.html?id=${$(this).data('key')}`;
     })
-    $('.delete-btn').on('click',function () {
+    $('.delete-btn').on('click', function () {
       // console.log($(this).data('key'))
-      let isDelete = confirm(`是否刪除${$(this).data('key')}?`)
-      if(isDelete){
+      let isDelete = confirm(`是否刪除?`)
+      if (isDelete) {
         // alert("已刪除")
         deleteApi({
-          apiUrl:`/api/v1/index/source/detail`,
-          id:$(this).data('key')
+          apiUrl: `/api/v1/index/source/detail`,
+          id: $(this).data('key')
         })
-      }else{
+      } else {
         // alert("取消刪除")
       }
     })
@@ -65,11 +65,11 @@
   $(document).ready(function () {
 
     getList();
-    $('.add-btn').on('click',function () {
+    $('.add-btn').on('click', function () {
       // console.log($(this).data('key'))
       window.location.href = `sourceDetailForm.html`;
     })
 
-    
+
   })
 })()

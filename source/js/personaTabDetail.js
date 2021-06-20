@@ -4,7 +4,7 @@
   function getList() {
     $('body').LoadingOverlay("show");
     $.ajax({
-      url: apiDomain + '/api/v1/index/media/detail/all',
+      url: apiDomain + '/api/v1/index/personatab/detail/all',
       type: 'get',
       data: {
       },
@@ -28,12 +28,19 @@
       str = `
         <tr>
           <td scope="row">${parseInt(i) + 1}</td>
+          <td>${data[i].eventId}</td>
           <td>${data[i].title}</td>
-          <td>${data[i].excerpt}</td>
-          <td>${data[i].source}</td>
           <td>${data[i].url}</td>
-          <td>${data[i].time}</td>
-          <td><img src="${data[i].img}"></td>
+          <td>${data[i].isCheaper? '是' : '否'}</td>
+          <td>${data[i].detail_savePrice}</td>
+          <td><div style="width:50px;height:50px;background-color:${data[i].color}"></div></td>
+          <td>${data[i].detail_title}</td>
+          <td>${data[i].detail_buttonText}</td>
+          <td>${data[i].detail_exampleTitle}</td>
+          <td>${data[i].detail_exampleDetail}</td>
+          <td>${data[i].detail_featureBullets}</td>
+          <td>${data[i].detail_featuresTitle}</td>
+          <td><img src="${data[i].icon}"></td>
           <td>${data[i].isEnable ? '是' : '否'}</td>
           <td>
             <div class="btn edit-btn btn-primary" data-key="${data[i].id}">修改</div>
@@ -48,7 +55,7 @@
   function bindEvent() {
     $('.edit-btn').on('click', function () {
       // console.log($(this).data('key'))
-      window.location.href = `mediaDataForm.html?id=${$(this).data('key')}`;
+      window.location.href = `personaTabDetailForm.html?id=${$(this).data('key')}`;
     })
     $('.delete-btn').on('click', function () {
       // console.log($(this).data('key'))
@@ -56,7 +63,7 @@
       if (isDelete) {
         // alert("已刪除")
         deleteApi({
-          apiUrl: `/api/v1/index/media/detail`,
+          apiUrl: `/api/v1/index/personatab/detail`,
           id: $(this).data('key')
         })
       } else {
@@ -69,7 +76,7 @@
     getList();
     $('.add-btn').on('click', function () {
       // console.log($(this).data('key'))
-      window.location.href = `mediaDataForm.html`;
+      window.location.href = `personaTabDetailForm.html`;
     })
 
 

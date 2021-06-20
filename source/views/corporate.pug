@@ -20,7 +20,7 @@ block body
   article.corporate-page
     h1 Corporate
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="corporate")
+    form#dataForm.row.g-3.needs-validation(novalidate='')
       .wrapper.c-2
         .content
           h3 meta
@@ -154,51 +154,52 @@ block body
                 | 不得為空
           .form-row
             .items-title vision_items
-            .items-box(data-itemKey="vision_items")
+            .items-box#vision_items(data-itemKey="vision_items")
               .items
                 .col-md-12
-                  label.form-label() 標題
-                  input.form-control.form-bind-items-data(type='text' name="vision_item_title" value='items1' required='')
+                  label.form-label 標題
+                  input.form-control.form-bind-items-data(type='text' name="vision_items_title" value='' required='')
                   .valid-feedback
                     | OK!
                   .invalid-feedback
                     | 不得為空
                 .col-md-12
                   label.form-label 圖片
-                  input.form-control(type='file' value='' imgClass="vision_item_img")
-                  input.form-control.form-bind-items-data(type='hidden' name="vision_item_img" value='' required='')
+                  input.form-control(type='file' value='' imgClass="vision_items_img")
+                  input.form-control.form-bind-items-data(type='hidden' name="vision_items_img" value='' required='')
+                  img.file-img.vision_items_img(src="")
                   .valid-feedback
                     | OK!
                   .invalid-feedback
                     | 不得為空
-                  img.file-img.vision_item_img(src="")
             .btn-add.btn.btn-sm.btn-primary(data-copy="vision_items") 新增
 
               
 
-      .page-data(data-apiUrl="/api/v1/corporate/publish" data-nextTo="corporate.html" data-isMainPage="1")
-      //- input.form-control.form-bind-data.form-bind-data(type='hidden' name="id" value='' required='')
-      button.btn.btn-primary(type='submit') Submit form
+      .page-data(data-apiUrl="/api/v1/corporate" data-nextTo="corporate.html" data-isMainPage="1")
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.draft.btn.btn-primary(type='submit') preview
 
     .hidde-box
       .vision_items
         .items
           .col-md-12
-            label.form-label() 子標題
-            input.form-control.form-bind-data(type='text' name="vision_item_title" value='' required='')
+            label.form-label 標題
+            input.form-control.form-bind-items-data(type='text' name="vision_items_title" value='' required='')
             .valid-feedback
               | OK!
             .invalid-feedback
               | 不得為空
           .col-md-12
             label.form-label 圖片
-            input.form-control(type='file' value='' imgClass="vision_item_img")
-            input.form-control.form-bind-items-data(type='hidden' name="vision_item_img" value='' required='')
+            input.form-control(type='file' value='' imgClass="vision_items_img")
+            input.form-control.form-bind-items-data(type='hidden' name="vision_items_img" value='' required='')
+            img.file-img.vision_items_img(src="")
             .valid-feedback
               | OK!
             .invalid-feedback
               | 不得為空
-            img.file-img.vision_item_img(src="")
 
 
 

@@ -11,27 +11,26 @@
   @media only screen and (min-height: $h)
     @content
 
-
 =clearfix
   &:after
     content: ''
     display: block
     clear: both
-  
+
 =keyframes($name)
-	@-webkit-keyframes #{$name}
-		@content
-	@-moz-keyframes #{$name}
-		@content
-	@-ms-keyframes #{$name}
-		@content
-	@keyframes #{$name}
-		@content 
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
 =animation($content)
-	-webkit-animation: $content
-	-moz-animation: $content
-	-o-animation: $content
-	animation: $content
+  -webkit-animation: $content
+  -moz-animation: $content
+  -o-animation: $content
+  animation: $content
 
 =before($txt:'')
   &:before
@@ -50,7 +49,6 @@
     &:hover
       @content
 
-
 =pstc0($t:0,$l:0,$b:0,$r:0)
   position: absolute
   top: $t
@@ -68,26 +66,25 @@
 =fontH1()
   font-size: 1.5rem
   line-height: 1.5
-  
+
 =fontH2()
   font-size: 1.333333333333333rem
   line-height: 1.5
-  
+
 =fontH3()
   font-size: 1.166666666666667rem
   line-height: 1.5
-  
+
 =fontP()
   font-size: 1rem
   line-height: 1.5
-  
+
 =dib
   display: inline-block
   vertical-align: middle
 
 $red: #cc0000
 $yellow: #ffff00
-
 
 *
   padding: 0
@@ -110,7 +107,7 @@ html
 body
   // background-color: #f3c100
   font-size: 0
-  
+
 hr
   margin: 0.5rem 0
 
@@ -166,7 +163,6 @@ h2
           p
             font-size: 0.8rem
 
-
 .body-wrapper
   width: calc(100% - 220px)
   min-height: 100vh
@@ -195,7 +191,6 @@ header
       +dib
     .logout
       cursor: pointer
-
 
 // .table-data
 //   width: 100%
@@ -288,7 +283,7 @@ form
       width: 100px
       margin: 0 .5rem
       display: inline-block
-  
+
 .hidde-box
   opacity: 0
   position: absolute
@@ -296,6 +291,8 @@ form
   left: 0
   z-index: -100
 
+.table-wrapper
+  overflow-x: auto
 table
   background-color: #fff
   th,td

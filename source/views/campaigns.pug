@@ -5,6 +5,7 @@ block pageCSS
 
 block pageJs
   script(src="./js/campaigns.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'campaigns'
@@ -19,8 +20,44 @@ block body
   article.campaigns-page
     h1 Campaigns
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='' method="post" action="campaigns")
-      .wrapper
+    form#dataForm.row.g-3.needs-validation(novalidate='')
+      .wrapper.c-2
+        .content
+          h3 meta
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_title') meta標題
+              input#meta_title.form-control.form-bind-data(type='text' name="meta_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_description') meta描述
+              input#meta_description.form-control.form-bind-data(type='text' name="meta_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_siteName') meta網站名稱
+              input#meta_siteName.form-control.form-bind-data(type='text' name="meta_siteName" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='meta_img') meta圖片
+              input.form-control(type='file' value='' imgClass="meta_img")
+              input#meta_img.form-control.form-bind-data(type='hidden' name="meta_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.meta_img(src="")
         .content
           //- h3 meta
           .form-row
@@ -29,6 +66,14 @@ block body
               select#isEnabled.form-select(name="isEnabled" required='')
                 option(value=1) 顯示
                 option(value=0) 不顯示
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='title') 標題
+              input#title.form-control.form-bind-data(type='text' name="title" value='' required='')
               .valid-feedback
                 | OK!
               .invalid-feedback
@@ -49,7 +94,22 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-      button.btn.btn-primary(type='submit') Submit form
+      .page-data(data-apiUrl="/api/v1/campaign" data-nextTo="campaign.html" data-isMainPage="1")
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.draft.btn.btn-primary(type='submit') preview
+    //- br
+    //- hr
+    //- table.table.table-striped
+    //-   thead.thead-dark
+    //-     tr
+    //-       th(scope='col') *
+    //-       th(scope='col') 標題
+    //-       th(scope='col') 內容
+    //-       th(scope='col') 順序
+    //-       th(scope='col') 是否啟用
+    //-       th(scope='col') 
+    //-   tbody
 
 
 

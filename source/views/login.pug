@@ -16,18 +16,18 @@ block pageJs
 
 block body
   article.login-page
-    .wrapper.fadeInDown
+    .wrapper
       #formContent
         form#dataForm.needs-validation(novalidate='' method="post" action="/api/v1/user/login")
-          input#account.form-control.form-bind-data.fadeIn.second(type='text' name="account" value='' required='' placeholder='account')
+          input#account.form-control.form-bind-data.second(type='text' name="account" value='' required='' placeholder='account')
           .valid-feedback
             | OK!
           .invalid-feedback
             | 不得為空
-          input#password.form-control.form-bind-data.fadeIn.third(type='password' name="password" value='' required='' placeholder='password')
+          input#password.form-control.form-bind-data.third(type='password' name="password" value='' required='' placeholder='password')
           .valid-feedback
             | OK!
           .invalid-feedback
             | 不得為空
-          input.fadeIn.fourth(type='submit' value='Log In')
+          input.fourth(type='submit' value='Log In')
 
