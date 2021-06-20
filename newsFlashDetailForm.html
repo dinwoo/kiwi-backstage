@@ -28,8 +28,8 @@
               <p>SourceDetail</p></a><a class="link" href="./taipowerDetail.html"> 
               <p>TaipowerDetail</p></a><a class="link active" href="./newsFlashDetail.html"> 
               <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
-              <p>FaqDetail</p></a><a class="link" href="./partnersDetail.html"> 
-              <p>PartnersDetail</p></a><a class="link" href="./personaTabDetail.html"> 
+              <p>FaqDetail</p></a><a class="link" href="./partnerDetail.html"> 
+              <p>PartnerDetail</p></a><a class="link" href="./personaTabDetail.html"> 
               <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
               <p>PromoOptionDetail</p></a></div><a class="link" href="./about.html"> 
             <p>About</p></a><a class="link" href="./corporate.html"> 
@@ -59,7 +59,7 @@
       <article class="news-flash-detail-form-page">
         <h1>NewsFlashDetail</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="newsFlashDetail">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
           <div class="wrapper">
             <div class="content">
               <div class="form-row">
@@ -80,10 +80,12 @@
               </div>
             </div>
           </div>
+          <div class="page-data" data-apiUrl="/api/v1/index/newsflash/detail" data-nextTo="newsflashDetail.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
       </article>
     </div>
-    <script src="./js/newsFlashDetailForm.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

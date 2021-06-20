@@ -28,8 +28,8 @@
               <p>SourceDetail</p></a><a class="link" href="./taipowerDetail.html"> 
               <p>TaipowerDetail</p></a><a class="link" href="./newsFlashDetail.html"> 
               <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
-              <p>FaqDetail</p></a><a class="link" href="./partnersDetail.html"> 
-              <p>PartnersDetail</p></a><a class="link active" href="./personaTabDetail.html"> 
+              <p>FaqDetail</p></a><a class="link" href="./partnerDetail.html"> 
+              <p>PartnerDetail</p></a><a class="link active" href="./personaTabDetail.html"> 
               <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
               <p>PromoOptionDetail</p></a></div><a class="link" href="./about.html"> 
             <p>About</p></a><a class="link" href="./corporate.html"> 
@@ -59,13 +59,13 @@
       <article class="persona-tab-detail-form-page">
         <h1>PersonaTabDetail</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="personaTabDetail">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
           <div class="wrapper">
             <div class="content">
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="id">事件代號</label>
-                  <input class="form-control form-bind-data" id="id" type="text" name="id" value="" required="">
+                  <label class="form-label" for="eventId">事件代號</label>
+                  <input class="form-control form-bind-data" id="eventId" type="text" name="eventId" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -123,8 +123,8 @@
               </div>
               <div class="form-row">
                 <div class="col-md-12">
-                  <label class="form-label" for="detail_buttonTexe">名稱</label>
-                  <input class="form-control form-bind-data" id="detail_buttonTexe" type="text" name="detail_buttonTexe" value="" required="">
+                  <label class="form-label" for="detail_buttonText">名稱</label>
+                  <input class="form-control form-bind-data" id="detail_buttonText" type="text" name="detail_buttonText" value="" required="">
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div>
                 </div>
@@ -172,10 +172,12 @@
               </div>
             </div>
           </div>
+          <div class="page-data" data-apiUrl="/api/v1/index/personatab/detail" data-nextTo="personaTabDetail.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
       </article>
     </div>
-    <script src="./js/personaTabDetailForm.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

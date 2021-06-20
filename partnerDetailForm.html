@@ -28,8 +28,8 @@
               <p>SourceDetail</p></a><a class="link" href="./taipowerDetail.html"> 
               <p>TaipowerDetail</p></a><a class="link" href="./newsFlashDetail.html"> 
               <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
-              <p>FaqDetail</p></a><a class="link active" href="./partnersDetail.html"> 
-              <p>PartnersDetail</p></a><a class="link" href="./personaTabDetail.html"> 
+              <p>FaqDetail</p></a><a class="link active" href="./partnerDetail.html"> 
+              <p>PartnerDetail</p></a><a class="link" href="./personaTabDetail.html"> 
               <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
               <p>PromoOptionDetail</p></a></div><a class="link" href="./about.html"> 
             <p>About</p></a><a class="link" href="./corporate.html"> 
@@ -56,27 +56,37 @@
           <div class="logout btn btn-sm btn-secondary">登出</div>
         </div>
       </header>
-      <article class="partners-detail-page">
-        <h1>partners-detail</h1>
-        <div class="btn add-btn btn-primary">新增</div>
+      <article class="partners-detail-form-page">
+        <h1>PartnersDetail</h1>
         <hr>
-        <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">*</th>
-              <th scope="col">照片</th>
-              <th scope="col">描述</th>
-              <th scope="col">出處</th>
-              <th scope="col">日期</th>
-              <th scope="col">連結</th>
-              <th scope="col">標題</th>
-              <th scope="col"> </th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
+          <div class="wrapper">
+            <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="name">名稱</label>
+                  <input class="form-control form-bind-data" id="name" type="text" name="name" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="img">照片</label>
+                  <input class="form-control" type="file" value="" imgClass="img">
+                  <input class="form-control form-bind-data" id="img" type="hidden" name="img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div><img class="file-img img" src="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-data" data-apiUrl="/api/v1/index/partner/detail" data-nextTo="partnerDetail.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
       </article>
     </div>
-    <script src="./js/partnersDetail.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

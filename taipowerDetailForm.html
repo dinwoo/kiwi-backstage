@@ -28,8 +28,8 @@
               <p>SourceDetail</p></a><a class="link active" href="./taipowerDetail.html"> 
               <p>TaipowerDetail</p></a><a class="link" href="./newsFlashDetail.html"> 
               <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
-              <p>FaqDetail</p></a><a class="link" href="./partnersDetail.html"> 
-              <p>PartnersDetail</p></a><a class="link" href="./personaTabDetail.html"> 
+              <p>FaqDetail</p></a><a class="link" href="./partnerDetail.html"> 
+              <p>PartnerDetail</p></a><a class="link" href="./personaTabDetail.html"> 
               <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
               <p>PromoOptionDetail</p></a></div><a class="link" href="./about.html"> 
             <p>About</p></a><a class="link" href="./corporate.html"> 
@@ -59,9 +59,20 @@
       <article class="taipower-detail-form-page">
         <h1>TaipowerDetail</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="taipowerDetail">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
           <div class="wrapper">
             <div class="content">
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="isEnable">是否啟用</label>
+                  <select class="form-select" id="isEnable" name="isEnable" required="">
+                    <option value="1">啟用</option>
+                    <option value="0">不啟用</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
               <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="title">標題</label>
@@ -89,10 +100,12 @@
               </div>
             </div>
           </div>
+          <div class="page-data" data-apiUrl="/api/v1/index/taipower/detail" data-nextTo="taipowerDetail.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
       </article>
     </div>
-    <script src="./js/taipowerDetailForm.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

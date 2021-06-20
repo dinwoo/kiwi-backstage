@@ -28,8 +28,8 @@
               <p>SourceDetail</p></a><a class="link" href="./taipowerDetail.html"> 
               <p>TaipowerDetail</p></a><a class="link" href="./newsFlashDetail.html"> 
               <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
-              <p>FaqDetail</p></a><a class="link" href="./partnersDetail.html"> 
-              <p>PartnersDetail</p></a><a class="link" href="./personaTabDetail.html"> 
+              <p>FaqDetail</p></a><a class="link" href="./partnerDetail.html"> 
+              <p>PartnerDetail</p></a><a class="link" href="./personaTabDetail.html"> 
               <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
               <p>PromoOptionDetail</p></a></div><a class="link active" href="./about.html"> 
             <p>About</p></a><a class="link" href="./corporate.html"> 
@@ -59,7 +59,7 @@
       <article class="about-page">
         <h1>About</h1>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="" method="post" action="about">
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
           <div class="wrapper c-2">
             <div class="content">
               <h3>meta</h3>
@@ -146,6 +146,31 @@
                   <div class="valid-feedback">OK!</div>
                   <div class="invalid-feedback">不得為空</div><img class="file-img splashImg" src="">
                 </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>year</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="year_title">年份標題</label>
+                  <input class="form-control form-bind-data" id="year_title" type="text" name="year_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="items-title">year_itmes</div>
+                <div class="items-box" data-itemKey="vision_items">
+                  <div class="items">
+                    <div class="col-md-12">
+                      <label class="form-label">標題</label>
+                      <input class="form-control form-bind-items-data" type="text" name="vision_items_title" value="items1" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-add btn btn-sm btn-primary" data-copy="vision_items">新增</div>
               </div>
             </div>
           </div>
