@@ -1,0 +1,193 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/form.js")
+  
+block pageType
+  - var page = 'campaignsDetail'
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.campaigns-detail-form-page
+    h1 CampaignsDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='')
+      .wrapper.c-2
+        .content
+          h3 general
+          .form-row
+            .col-md-12
+              label.form-label(for='general_isEnable') 是否啟用
+              select#general_isEnable.form-select(name="general_isEnable" required='')
+                option(value=1) 啟用
+                option(value=0) 不啟用
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_id') 事件代碼
+              input#general_id.form-control.form-bind-data(type='text' name="general_id" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_img') 照片
+              input.form-control(type='file' value='' imgClass="general_img")
+              input#general_img.form-control.form-bind-data(type='hidden' name="general_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.general_img(src="")
+        .content
+          h3 cta
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_buttonText') 按鈕顯示文字
+              input#cta_buttonText.form-control.form-bind-data(type='text' name="cta_buttonText" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_buttonUrl') 網址
+              input#cta_buttonUrl.form-control.form-bind-data(type='text' name="cta_buttonUrl" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_previewButtonTex') 查看按鈕顯示文字
+              input#cta_previewButtonTex.form-control.form-bind-data(type='text' name="cta_previewButtonTex" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='cta_previewButtonUrl') 查看按鈕網址
+              input#cta_previewButtonUrl.form-control.form-bind-data(type='text' name="cta_previewButtonUrl" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 detail
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_title') 標題
+              input#detail_title.form-control.form-bind-data(type='text' name="detail_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='detail_description') 描述
+              input#detail_description.form-control.form-bind-data(type='text' name="detail_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 notice
+          .form-row
+            .col-md-12
+              label.form-label(for='notice_title') 標題
+              input#notice_title.form-control.form-bind-data(type='text' name="notice_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='notice_description') 描述
+              input#notice_description.form-control.form-bind-data(type='text' name="notice_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 precaution
+          .form-row
+            .col-md-12
+              label.form-label(for='precaution_title') 標題
+              input#precaution_title.form-control.form-bind-data(type='text' name="precaution_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='precaution_descriptiontitle') 描述標題
+              input#precaution_descriptiontitle.form-control.form-bind-data(type='text' name="precaution_descriptiontitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='precaution_description') 描述
+              input#precaution_description.form-control.form-bind-data(type='text' name="precaution_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 time
+          .form-row
+            .col-md-12
+              label.form-label(for='time_startTime') 開始時間
+              input#time_startTime.form-control.form-bind-data(type='date' name="time_startTime" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='time_endTime') 結束時間
+              input#time_endTime.form-control.form-bind-data(type='date' name="time_endTime" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+        .content
+          h3 tutorial
+          .form-row
+            .col-md-12
+              label.form-label(for='tutorial_title') 標題
+              input#tutorial_title.form-control.form-bind-data(type='text' name="tutorial_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='tutorial_description') 描述
+              input#tutorial_description.form-control.form-bind-data(type='text' name="tutorial_description" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+      .page-data(data-apiUrl="/api/v1/campaign/detail" data-nextTo="campaignsDetail.html")
+      input.form-control.form-bind-data(type='hidden' name="id" value='' required='')
+      button.btn.btn-primary(type='submit') Submit form
+
+
+
+
+

@@ -1,0 +1,173 @@
+extend ../Layout.pug
+
+block pageCSS
+  //- link(href="./css/index.css", rel="stylesheet")
+
+block pageJs
+  script(src="./js/getSimilarList.js")
+  script(src="./js/form.js")
+  
+block pageType
+  - var page = 'greenPowerDetail'
+  
+//- block head
+//-   include ../components/Header.pug
+
+//- block footer
+//-   include ../components/Footer.pug
+
+block body
+  article.greenPowerDetail-page
+    h1 GreenPowerDetail
+    hr
+    form#dataForm.row.g-3.needs-validation(novalidate='')
+      .wrapper.c-2
+        .content
+          h3 general
+          .form-row
+            .col-md-12
+              label.form-label(for='general_isEnable') 是否啟用
+              select#general_isEnable.form-select(name="general_isEnable" required='')
+                option(value=1) 啟用
+                option(value=0) 不啟用
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_title') 標題
+              input#general_title.form-control.form-bind-data(type='text' name="general_title" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_id') 事件代碼
+              input#general_id.form-control.form-bind-data(type='text' name="general_id" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_source') 文章出處
+              input#general_source.form-control.form-bind-data(type='text' name="general_source" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_similarPostsTitle') 相關文章標題
+              input#general_similarPostsTitle.form-control.form-bind-data(type='text' name="general_similarPostsTitle" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_tag') 標籤
+              input#general_tag.form-control.form-bind-data(type='text' name="general_tag" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_date') 日期
+              input#general_date.form-control.form-bind-data(type='date' name="general_date" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_url') 連結
+              input#general_url.form-control.form-bind-data(type='text' name="general_url" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+          .form-row
+            .col-md-12
+              label.form-label(for='general_img') 活動圖片
+              input.form-control(type='file' value='' imgClass="general_img")
+              input#general_img.form-control.form-bind-data(type='hidden' name="general_img" value='' required='')
+              .valid-feedback
+                | OK!
+              .invalid-feedback
+                | 不得為空
+              img.file-img.general_img(src="")
+        .content
+          h3 similarPost
+          .form-row
+            .items-title similarPost_items
+            .items-box#greenPowerDetailSimilars(data-itemKey="greenPowerDetailSimilars")
+              .items
+                .col-md-12
+                  label.form-label 文章
+                  select.form-select.form-bind-items-data(name="similarPost_item_id" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+            .btn-add.btn.btn-sm.btn-primary(data-copy="greenPowerDetailSimilars") 新增
+        .content
+          h3 sections
+          .form-row
+            .items-title sections_items
+            .items-box#greenPowerDetailSections(data-itemKey="greenPowerDetailSections")
+              .items
+                .col-md-12
+                  label.form-label 標題
+                  input.form-control.form-bind-items-data(type='text' name="sections_item_title" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+                .col-md-12
+                  label.form-label 內容
+                  input.form-control.form-bind-items-data(type='text' name="sections_item_content" value='' required='')
+                  .valid-feedback
+                    | OK!
+                  .invalid-feedback
+                    | 不得為空
+            .btn-add.btn.btn-sm.btn-primary(data-copy="greenPowerDetailSections") 新增
+
+
+      .page-data(data-apiUrl="/api/v1/greenpower/detail" data-nextTo="greenPowerDetail.html")
+      //- input.form-control.form-bind-data(type='hidden' name="id" value='' required='')
+      button.btn.btn-primary(type='submit') Submit form
+
+
+    .hidde-box
+      .greenPowerDetailSimilars
+        .items
+          .col-md-12
+            label.form-label 文章
+            select.form-select.form-bind-items-data(name="similarPost_item_id" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+      .greenPowerDetailSections
+        .items
+          .col-md-12
+            label.form-label 標題
+            input.form-control.form-bind-items-data(type='text' name="sections_item_title" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 內容
+            input.form-control.form-bind-items-data(type='text' name="sections_item_content" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+
+
+

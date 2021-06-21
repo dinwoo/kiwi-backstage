@@ -62,8 +62,8 @@ block body
           //- h3 meta
           .form-row
             .col-md-12
-              label.form-label(for='isEnabled') 是否顯示
-              select#isEnabled.form-select(name="isEnabled" required='')
+              label.form-label(for='isEnable') 是否顯示
+              select#isEnable.form-select(name="isEnable" required='')
                 option(value=1) 顯示
                 option(value=0) 不顯示
               .valid-feedback
@@ -94,7 +94,7 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-      .page-data(data-apiUrl="/api/v1/campaign" data-nextTo="campaign.html" data-isMainPage="1")
+      .page-data(data-apiUrl="/api/v1/campaign" data-nextTo="campaigns.html" data-isMainPage="1")
       .btn-box
         button.submit.btn.btn-primary(type='submit') Submit
         button.draft.btn.btn-primary(type='submit') preview

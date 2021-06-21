@@ -16,90 +16,23 @@ block pageType
 //-   include ../components/Footer.pug
 
 block body
-  article.greenPowerDetail-page
-    h1 GreenPowerDetail
+  article.green-power-detail-page
+    h1 GreenPower-detail
+    .btn.add-btn.btn-primary 新增
     hr
-    form#dataForm.row.g-3.needs-validation(novalidate='')
-      .wrapper.c-2
-        .content
-          h3 general
-          .form-row
-            .col-md-12
-              label.form-label(for='isEnable') 是否啟用
-              select#isEnable.form-select(name="isEnable" required='')
-                option(value=1) 啟用
-                option(value=0) 不啟用
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_title') 標題
-              input#general_title.form-control.form-bind-data(type='text' name="general_title" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_id') 事件代碼
-              input#general_id.form-control.form-bind-data(type='text' name="general_id" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_source') 文章出處
-              input#general_source.form-control.form-bind-data(type='text' name="general_source" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_similarPostsTitle') 相關文章標題
-              input#general_similarPostsTitle.form-control.form-bind-data(type='text' name="general_similarPostsTitle" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_tag') 標籤
-              input#general_tag.form-control.form-bind-data(type='text' name="general_tag" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_date') 日期
-              input#general_date.form-control.form-bind-data(type='date' name="general_date" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_url') 連結
-              input#general_url.form-control.form-bind-data(type='text' name="general_url" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-          .form-row
-            .col-md-12
-              label.form-label(for='general_img') 活動圖片
-              input.form-control(type='file' value='' imgClass="general_img")
-              input#general_img.form-control.form-bind-data(type='hidden' name="general_img" value='' required='')
-              .valid-feedback
-                | OK!
-              .invalid-feedback
-                | 不得為空
-              img.file-img.general_img(src="")
-      button.btn.btn-primary(type='submit') Submit form
+    table.table.table-striped
+      thead.thead-dark
+        tr
+          th(scope='col') *
+          th(scope='col') 標題
+          th(scope='col') 相關文章標題
+          th(scope='col') 標籤
+          th(scope='col') 照片
+          th(scope='col') 是否啟用
+          th(scope='col') 
+      tbody
+
+
 
 
 

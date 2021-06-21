@@ -27,7 +27,11 @@ function sendFormData(data) {
     formData.isDraft=!isPublish
   }
   for (let i = 0; i < $('.form-bind-data').length; i++) {
-    formData[$('.form-bind-data').eq(i).attr('name')] = $('.form-bind-data').eq(i).val()
+    if($('.form-bind-data').eq(i).attr('type')=='number'){
+      formData[$('.form-bind-data').eq(i).attr('name')] = parseInt($('.form-bind-data').eq(i).val())
+    }else{
+      formData[$('.form-bind-data').eq(i).attr('name')] = $('.form-bind-data').eq(i).val()
+    }
   }
 
   // 抓items用的

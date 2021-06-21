@@ -33,16 +33,16 @@
   function setForm(data) {
     console.log(data)
     for (const key in data) {
-      console.log("------------------------------")
-      console.log(key)
-      console.log(data[key])
+      // console.log("------------------------------")
+      // console.log(key)
+      // console.log(Array.isArray(data[key]))
       if (key.indexOf('isEnable') >= 0) {
         if (data[key]) {
           $(`#${key}`).val('1')
         } else {
           $(`#${key}`).val('0')
         }
-      } else if(key.indexOf('items')>= 0){
+      } else if(Array.isArray(data[key])){
         $(`#${key}`).append($(`.hidde-box .${key}`).html())
         for (let i = 0; i < data[key].length; i++) {
           console.log(data[key][i])
