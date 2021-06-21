@@ -17,6 +17,7 @@ block pageJs
 block body
   article.login-page
     .wrapper
+      .title KIWI CMS Management DEMO
       #formContent
         form#dataForm.needs-validation(novalidate='' method="post" action="/api/v1/user/login")
           input#account.form-control.form-bind-data.second(type='text' name="account" value='' required='' placeholder='account')
