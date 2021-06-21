@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750, user-scalable=0">
+    <title>kiwi backstage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="./css/all.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/2.5.0/jquery.mockjax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+    <script src="./js/all.js"></script>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="sidebar-title">kiwi-backstage</div>
+        <hr>
+        <div class="box"><a class="link" href="./index.html"> 
+            <p>Index</p></a>
+          <div class="sub-list"> <a class="link" href="./feedbackDetail.html"> 
+              <p>FeedbackDetail</p></a><a class="link" href="./mediaData.html"> 
+              <p>MediaData</p></a><a class="link" href="./sourceDetail.html"> 
+              <p>SourceDetail</p></a><a class="link" href="./taipowerDetail.html"> 
+              <p>TaipowerDetail</p></a><a class="link" href="./newsFlashDetail.html"> 
+              <p>NewsFlashDetail</p></a><a class="link" href="./faqDetail.html"> 
+              <p>FaqDetail</p></a><a class="link" href="./partnerDetail.html"> 
+              <p>PartnerDetail</p></a><a class="link" href="./personaTabDetail.html"> 
+              <p>PersonaTabDetail</p></a><a class="link" href="./promoOptionDetail.html"> 
+              <p>PromoOptionDetail</p></a></div><a class="link" href="./about.html"> 
+            <p>About</p></a><a class="link" href="./corporate.html"> 
+            <p>Corporate</p></a><a class="link" href="./feature.html"> 
+            <p>Feature</p></a><a class="link" href="./campaigns.html"> 
+            <p>Campaigns</p></a>
+          <div class="sub-list active"> <a class="link active" href="./campaignsDetail.html"> 
+              <p>CampaignsDetail</p></a></div><a class="link" href="./greenPower.html"> 
+            <p>GreenPower</p></a>
+          <div class="sub-list"> <a class="link" href="./greenPowerDetail.html"> 
+              <p>GreenPowerDetail</p></a></div><a class="link" href="./report.html"> 
+            <p>Report</p></a><a class="link" href="./store.html"> 
+            <p>Store</p></a><a class="link" href="./header.html"> 
+            <p>Header</p></a><a class="link" href="./footer.html"> 
+            <p>Footer</p></a><a class="link" href="./unload.html"> 
+            <p>Unload</p></a>
+        </div>
+      </div>
+    </div>
+    <div class="body-wrapper" id="mainBody">
+      <header>
+        <div class="wrapper">
+          <div class="user-name"><span>daniel</span></div>
+          <div class="logout btn btn-sm btn-secondary">登出</div>
+        </div>
+      </header>
+      <article class="campaigns-detail-form-page">
+        <h1>CampaignsDetail</h1>
+        <hr>
+        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
+          <div class="wrapper c-2">
+            <div class="content">
+              <h3>general</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_isEnable">是否啟用</label>
+                  <select class="form-select" id="general_isEnable" name="general_isEnable" required="">
+                    <option value="1">啟用</option>
+                    <option value="0">不啟用</option>
+                  </select>
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_id">事件代碼</label>
+                  <input class="form-control form-bind-data" id="general_id" type="text" name="general_id" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="general_img">照片</label>
+                  <input class="form-control" type="file" value="" imgClass="general_img">
+                  <input class="form-control form-bind-data" id="general_img" type="hidden" name="general_img" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div><img class="file-img general_img" src="">
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>cta</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_buttonText">按鈕顯示文字</label>
+                  <input class="form-control form-bind-data" id="cta_buttonText" type="text" name="cta_buttonText" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_buttonUrl">網址</label>
+                  <input class="form-control form-bind-data" id="cta_buttonUrl" type="text" name="cta_buttonUrl" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_previewButtonTex">查看按鈕顯示文字</label>
+                  <input class="form-control form-bind-data" id="cta_previewButtonTex" type="text" name="cta_previewButtonTex" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="cta_previewButtonUrl">查看按鈕網址</label>
+                  <input class="form-control form-bind-data" id="cta_previewButtonUrl" type="text" name="cta_previewButtonUrl" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>detail</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="detail_title">標題</label>
+                  <input class="form-control form-bind-data" id="detail_title" type="text" name="detail_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="detail_description">描述</label>
+                  <input class="form-control form-bind-data" id="detail_description" type="text" name="detail_description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>notice</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="notice_title">標題</label>
+                  <input class="form-control form-bind-data" id="notice_title" type="text" name="notice_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="notice_description">描述</label>
+                  <input class="form-control form-bind-data" id="notice_description" type="text" name="notice_description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>precaution</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="precaution_title">標題</label>
+                  <input class="form-control form-bind-data" id="precaution_title" type="text" name="precaution_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="precaution_descriptiontitle">描述標題</label>
+                  <input class="form-control form-bind-data" id="precaution_descriptiontitle" type="text" name="precaution_descriptiontitle" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="precaution_description">描述</label>
+                  <input class="form-control form-bind-data" id="precaution_description" type="text" name="precaution_description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>time</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="time_startTime">開始時間</label>
+                  <input class="form-control form-bind-data" id="time_startTime" type="date" name="time_startTime" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="time_endTime">結束時間</label>
+                  <input class="form-control form-bind-data" id="time_endTime" type="date" name="time_endTime" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h3>tutorial</h3>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="tutorial_title">標題</label>
+                  <input class="form-control form-bind-data" id="tutorial_title" type="text" name="tutorial_title" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label class="form-label" for="tutorial_description">描述</label>
+                  <input class="form-control form-bind-data" id="tutorial_description" type="text" name="tutorial_description" value="" required="">
+                  <div class="valid-feedback">OK!</div>
+                  <div class="invalid-feedback">不得為空</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-data" data-apiUrl="/api/v1/campaign/detail" data-nextTo="campaignsDetail.html"></div>
+          <input class="form-control form-bind-data" type="hidden" name="id" value="" required="">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+      </article>
+    </div>
+    <script src="./js/form.js"></script>
+  </body>
+</html>

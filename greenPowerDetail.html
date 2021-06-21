@@ -56,93 +56,24 @@
           <div class="logout btn btn-sm btn-secondary">登出</div>
         </div>
       </header>
-      <article class="greenPowerDetail-page">
-        <h1>GreenPowerDetail</h1>
+      <article class="green-power-detail-page">
+        <h1>GreenPower-detail</h1>
+        <div class="btn add-btn btn-primary">新增</div>
         <hr>
-        <form class="row g-3 needs-validation" id="dataForm" novalidate="">
-          <div class="wrapper c-2">
-            <div class="content">
-              <h3>general</h3>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="isEnable">是否啟用</label>
-                  <select class="form-select" id="isEnable" name="isEnable" required="">
-                    <option value="1">啟用</option>
-                    <option value="0">不啟用</option>
-                  </select>
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_title">標題</label>
-                  <input class="form-control form-bind-data" id="general_title" type="text" name="general_title" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_id">事件代碼</label>
-                  <input class="form-control form-bind-data" id="general_id" type="text" name="general_id" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_source">文章出處</label>
-                  <input class="form-control form-bind-data" id="general_source" type="text" name="general_source" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_similarPostsTitle">相關文章標題</label>
-                  <input class="form-control form-bind-data" id="general_similarPostsTitle" type="text" name="general_similarPostsTitle" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_tag">標籤</label>
-                  <input class="form-control form-bind-data" id="general_tag" type="text" name="general_tag" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_date">日期</label>
-                  <input class="form-control form-bind-data" id="general_date" type="date" name="general_date" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_url">連結</label>
-                  <input class="form-control form-bind-data" id="general_url" type="text" name="general_url" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="general_img">活動圖片</label>
-                  <input class="form-control" type="file" value="" imgClass="general_img">
-                  <input class="form-control form-bind-data" id="general_img" type="hidden" name="general_img" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div><img class="file-img general_img" src="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit form</button>
-        </form>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">*</th>
+              <th scope="col">標題</th>
+              <th scope="col">相關文章標題</th>
+              <th scope="col">標籤</th>
+              <th scope="col">照片</th>
+              <th scope="col">是否啟用</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </article>
     </div>
     <script src="./js/greenPowerDetail.js"></script>

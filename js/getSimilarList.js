@@ -1,0 +1,2 @@
+"use strict";$(document).ready(function(){$("body").LoadingOverlay("show"),$.ajax({url:apiDomain+"/api/v1/greenpower/detail/similarpost/all",type:"get",data:{},success:function(a){$("body").LoadingOverlay("hide"),console.log(a);for(var o=0;o<a.data.length;o++)console.log(a.data[o]),$("select.form-bind-items-data").append("\n            <option value=".concat(a.data[o].id,">\n              ").concat(a.data[o].name,"\n            </option>\n          "))},error:function(a){$("body").LoadingOverlay("hide"),console.log(a)}})});
+//# sourceMappingURL=getSimilarList.js.map
