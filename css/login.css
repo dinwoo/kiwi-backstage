@@ -46,6 +46,11 @@ article.login-page{
   /* padding: 20px; */
 }
 
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
