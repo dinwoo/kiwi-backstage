@@ -148,6 +148,8 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="wrapper">
             <div class="content">
               <h3>year</h3>
               <div class="form-row">
@@ -159,25 +161,110 @@
                 </div>
               </div>
               <div class="form-row">
-                <div class="items-title">year_itmes</div>
-                <div class="items-box" data-itemKey="vision_items">
-                  <div class="items">
+                <div class="years-title">year_items</div>
+                <div class="years-box" id="year_items" data-yearKey="year_items">
+                  <div class="years">
                     <div class="col-md-12">
-                      <label class="form-label">標題</label>
-                      <input class="form-control form-bind-items-data" type="text" name="vision_items_title" value="items1" required="">
+                      <label class="form-label">年份</label>
+                      <input class="form-control form-bind-years-data" type="text" name="year_item_year" value="" required="">
                       <div class="valid-feedback">OK!</div>
                       <div class="invalid-feedback">不得為空</div>
                     </div>
+                    <div class="months-box">
+                      <div class="months">
+                        <div class="col-md-12">
+                          <label class="form-label">月份</label>
+                          <input class="form-control form-bind-months-data" type="text" name="year_item_item_month" value="" required="">
+                          <div class="valid-feedback">OK!</div>
+                          <div class="invalid-feedback">不得為空</div>
+                        </div>
+                        <div class="col-md-12">
+                          <label class="form-label">標題</label>
+                          <input class="form-control form-bind-months-data" type="text" name="year_item_item_title" value="" required="">
+                          <div class="valid-feedback">OK!</div>
+                          <div class="invalid-feedback">不得為空</div>
+                        </div>
+                        <div class="col-md-12">
+                          <label class="form-label">描述</label>
+                          <input class="form-control form-bind-months-data" type="text" name="year_item_item_detail" value="" required="">
+                          <div class="valid-feedback">OK!</div>
+                          <div class="invalid-feedback">不得為空</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn-add-month btn btn-sm btn-primary" data-copy="month_items">新增月份</div>
                   </div>
                 </div>
-                <div class="btn-add btn btn-sm btn-primary" data-copy="vision_items">新增</div>
+                <div class="btn-add-year btn btn-sm btn-primary" data-copy="year_items">新增年份</div>
               </div>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Submit form</button>
+          <div class="page-data" data-apiUrl="/api/v1/about" data-nextTo="about.html" data-isMainPage="1"></div>
+          <div class="btn-box">
+            <button class="submit btn btn-primary" type="submit">Submit</button>
+            <button class="draft btn btn-primary" type="submit">preview</button>
+          </div>
         </form>
+        <div class="hidde-box">
+          <div class="year_items">
+            <div class="years">
+              <div class="col-md-12">
+                <label class="form-label">年份</label>
+                <input class="form-control form-bind-years-data" type="text" name="year_item_year" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="months-box">
+                <div class="months">
+                  <div class="col-md-12">
+                    <label class="form-label">月份</label>
+                    <input class="form-control form-bind-months-data" type="text" name="year_item_item_month" value="" required="">
+                    <div class="valid-feedback">OK!</div>
+                    <div class="invalid-feedback">不得為空</div>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label">標題</label>
+                    <input class="form-control form-bind-months-data" type="text" name="year_item_item_title" value="" required="">
+                    <div class="valid-feedback">OK!</div>
+                    <div class="invalid-feedback">不得為空</div>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label">描述</label>
+                    <input class="form-control form-bind-months-data" type="text" name="year_item_item_detail" value="" required="">
+                    <div class="valid-feedback">OK!</div>
+                    <div class="invalid-feedback">不得為空</div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-add-month btn btn-sm btn-primary" data-copy="month_items">新增月份</div>
+            </div>
+          </div>
+          <div class="month_items">
+            <div class="months">
+              <div class="col-md-12">
+                <label class="form-label">月份</label>
+                <input class="form-control form-bind-months-data" type="text" name="year_item_item_month" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">標題</label>
+                <input class="form-control form-bind-months-data" type="text" name="year_item_item_title" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">描述</label>
+                <input class="form-control form-bind-months-data" type="text" name="year_item_item_detail" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
     </div>
-    <script src="./js/about.js"></script>
+    <script src="./js/years.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

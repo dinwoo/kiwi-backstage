@@ -1,0 +1,2 @@
+"use strict";!function(){function n(){$(".btn-add-month").unbind("click"),$(".btn-add-month").on("click",function(){$(this).prev(".months-box").append($(".hidde-box .".concat($(this).data("copy"))).html())})}$(document).ready(function(){n(),$(".btn-add-year").on("click",function(){$(this).prev(".years-box").append($(".hidde-box .".concat($(this).data("copy"))).html()),n()})})}();
+//# sourceMappingURL=years.js.map
