@@ -108,7 +108,8 @@ block body
               .items
                 .col-md-12
                   label.form-label 文章
-                  select.form-select.form-bind-items-data(name="similarPost_item_id" value='' required='')
+                  select.form-select.form-bind-items-data(name="similarPost_item_id" value='')
+                    option(value="0") 
                   .valid-feedback
                     | OK!
                   .invalid-feedback
@@ -147,7 +148,7 @@ block body
         .items
           .col-md-12
             label.form-label 文章
-            select.form-select.form-bind-items-data(name="similarPost_item_id" value='' required='')
+            select.form-select.form-bind-items-data(name="similarPost_item_id" value='')
             .valid-feedback
               | OK!
             .invalid-feedback

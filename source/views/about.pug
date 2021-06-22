@@ -4,7 +4,8 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/about.js")
+  script(src="./js/years.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'about'
@@ -107,6 +108,7 @@ block body
               .invalid-feedback
                 | 不得為空
               img.file-img.splashImg(src="")
+      .wrapper
         .content
           h3 year
           .form-row
@@ -118,19 +120,105 @@ block body
               .invalid-feedback
                 | 不得為空
           .form-row
-            .items-title year_itmes
-            .items-box(data-itemKey="vision_items")
-              .items
+            .years-title year_items
+            .years-box#year_items(data-yearKey="year_items")
+              .years
                 .col-md-12
-                  label.form-label 標題
-                  input.form-control.form-bind-items-data(type='text' name="vision_items_title" value='items1' required='')
+                  label.form-label 年份
+                  input.form-control.form-bind-years-data(type='text' name="year_item_year" value='' required='')
                   .valid-feedback
                     | OK!
                   .invalid-feedback
                     | 不得為空
-            .btn-add.btn.btn-sm.btn-primary(data-copy="vision_items") 新增
-      button.btn.btn-primary(type='submit') Submit form
+                .months-box
+                  .months
+                    .col-md-12
+                      label.form-label 月份
+                      input.form-control.form-bind-months-data(type='text' name="year_item_item_month" value='' required='')
+                      .valid-feedback
+                        | OK!
+                      .invalid-feedback
+                        | 不得為空
+                    .col-md-12
+                      label.form-label 標題
+                      input.form-control.form-bind-months-data(type='text' name="year_item_item_title" value='' required='')
+                      .valid-feedback
+                        | OK!
+                      .invalid-feedback
+                        | 不得為空
+                    .col-md-12
+                      label.form-label 描述
+                      input.form-control.form-bind-months-data(type='text' name="year_item_item_detail" value='' required='')
+                      .valid-feedback
+                        | OK!
+                      .invalid-feedback
+                        | 不得為空
+                .btn-add-month.btn.btn-sm.btn-primary(data-copy="month_items") 新增月份
+            .btn-add-year.btn.btn-sm.btn-primary(data-copy="year_items") 新增年份
 
+
+      .page-data(data-apiUrl="/api/v1/about" data-nextTo="about.html" data-isMainPage="1")
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.draft.btn.btn-primary(type='submit') preview
+
+    .hidde-box
+      .year_items
+        .years
+          .col-md-12
+            label.form-label 年份
+            input.form-control.form-bind-years-data(type='text' name="year_item_year" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .months-box
+            .months
+              .col-md-12
+                label.form-label 月份
+                input.form-control.form-bind-months-data(type='text' name="year_item_item_month" value='' required='')
+                .valid-feedback
+                  | OK!
+                .invalid-feedback
+                  | 不得為空
+              .col-md-12
+                label.form-label 標題
+                input.form-control.form-bind-months-data(type='text' name="year_item_item_title" value='' required='')
+                .valid-feedback
+                  | OK!
+                .invalid-feedback
+                  | 不得為空
+              .col-md-12
+                label.form-label 描述
+                input.form-control.form-bind-months-data(type='text' name="year_item_item_detail" value='' required='')
+                .valid-feedback
+                  | OK!
+                .invalid-feedback
+                  | 不得為空
+          .btn-add-month.btn.btn-sm.btn-primary(data-copy="month_items") 新增月份
+      .month_items
+        .months
+          .col-md-12
+            label.form-label 月份
+            input.form-control.form-bind-months-data(type='text' name="year_item_item_month" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 標題
+            input.form-control.form-bind-months-data(type='text' name="year_item_item_title" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
+          .col-md-12
+            label.form-label 描述
+            input.form-control.form-bind-months-data(type='text' name="year_item_item_detail" value='' required='')
+            .valid-feedback
+              | OK!
+            .invalid-feedback
+              | 不得為空
 
 
 

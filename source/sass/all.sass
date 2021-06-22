@@ -255,21 +255,28 @@ form
         max-height: 200px
         margin: 10px 0
         object-fit: contain
-      .items-title
+      .items-title,.years-title
         font-size: 0.8rem
-      .items-box
+      .items-box,.years-box
         width: 100%
         padding: 10px
         border: 1px solid rgba(#3C8DBB,.3)
         border-radius: 5px
         box-sizing: border-box
-        .items
+        .items,.years
           padding: 10px
           border-radius: 5px
           background-color: rgba(#3C8DBB,.1)
-          & + .items
+          & + .items,& + .years
             margin-top: 10px
-      .btn-add
+          .months-box
+            width: 100%
+            padding: 0 10px
+            .months
+              padding: 0 10px
+              margin: 15px 0
+              border-left: 3px solid #3C8DBB
+      .btn-add,.btn-add-year,.btn-add-month
         margin: 10px 0
   .page-data
     position: absolute

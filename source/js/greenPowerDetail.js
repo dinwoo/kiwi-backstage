@@ -32,7 +32,7 @@
           <td>${data[i].general_similarPostsTitle}</td>
           <td>${data[i].general_tag}</td>
           <td><img src="${data[i].general_img}"></td>
-          <td>${data[i].isEnable ? '是' : '否'}</td>
+          <td>${data[i].general_isEnable ? '是' : '否'}</td>
           <td>
             <div class="btn edit-btn btn-primary" data-key="${data[i].id}">修改</div>
             <div class="btn delete-btn btn-danger" data-key="${data[i].id}">刪除</div>

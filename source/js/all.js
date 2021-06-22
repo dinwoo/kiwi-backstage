@@ -52,6 +52,23 @@ function sendFormData(data) {
   for (let i = 0; i < $('select').length; i++) {
     formData[$('select').eq(i).attr('name')] = parseInt($('select').eq(i).val()) ? true : false;
   }
+
+  let years = $('.years-box .years')
+  if(years.length) formData['year_items']=[]
+  for (let i = 0; i < years.length; i++) {
+    let months = $(years[i]).find('.months')
+    formData['year_items'][i]={}
+    formData['year_items'][i]['year_item_year'] = $(years[i]).find('.form-bind-years-data').val();
+    formData['year_items'][i]['year_item_items']=[]
+    for (let j = 0; j < months.length; j++) {
+      let monthItems =$(months[j]).find('.form-bind-months-data')
+      formData['year_items'][i]['year_item_items'][j]={}
+      for (let k = 0; k < monthItems.length; k++) {
+        console.log(monthItems.eq(k).attr('name'))      
+        formData['year_items'][i]['year_item_items'][j][monthItems.eq(k).attr('name')]=monthItems.eq(k).val()
+      }
+    }
+  }
   console.log(formData)
 
   $('body').LoadingOverlay("show");
