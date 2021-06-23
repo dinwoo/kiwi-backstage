@@ -50,14 +50,11 @@
           $(`#year_items .years`).eq(i).find('.months-box').html('')
           let monthsData = data[key][i].year_item_itmes
           for (let j = 0; j < monthsData.length; j++) {
-          $(`#year_items .years`).eq(i).find('.months-box').append($(`.hidde-box .month_items`).html())
-          let monthsItems = $(`#year_items .years`).eq(i).find('.months-box .months').eq(j).find('.form-bind-months-data')
-          for (let k = 0; k < monthsItems.length; k++) {
-            // console.log(monthsData[j][$(inputItems[j]).attr('name')])
-            // $(monthsItems[k]).attr('value',monthsData[j][$(inputItems[j]).attr('name')])
-          }
-          // $(`#year_items .years`).eq(i).find('.months-box .months').eq(j).find('[name=""]')
-          //   $(monthsData[j]).find()
+            $(`#year_items .years`).eq(i).find('.months-box').append($(`.hidde-box .month_items`).html())
+            let monthsItems = $(`#year_items .years`).eq(i).find('.months-box .months').eq(j).find('.form-bind-months-data')
+            for (let k = 0; k < monthsItems.length; k++) {
+              $(monthsItems[k]).attr('value',monthsData[j][$(monthsItems[k]).attr('name').replace('year_item_item_','')])
+            }
           }
         }
       } else if(Array.isArray(data[key])){
