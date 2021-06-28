@@ -64,9 +64,17 @@
           console.log(data[key])
           let inputItems = $(`#${key} .items`).eq(i).find('.form-bind-items-data');
           for (let j = 0; j < inputItems.length; j++) {
-            console.log(data[key][i][$(inputItems[j]).attr('name')])
+            // console.log(data[key][i][$(inputItems[j]).attr('name')])
             $(inputItems[j]).attr('value',data[key][i][$(inputItems[j]).attr('name')])
             inputItems[j].nextElementSibling.setAttribute('src',data[key][i][$(inputItems[j]).attr('name')])
+          }
+          let inputSelects = $(`#${key} .items`).eq(i).find('.form-bind-items-select');
+          for (let j = 0; j < inputSelects.length; j++) {
+            if(data[key][i][$(inputSelects[j]).attr('name')]){
+              $(inputSelects[j]).val('1')
+            }else{
+              $(inputSelects[j]).val('0')
+            }
           }
         }
         $("input[type='file']").on('change', function () {

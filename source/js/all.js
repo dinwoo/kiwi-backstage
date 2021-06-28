@@ -47,6 +47,11 @@ function sendFormData(data) {
         // 抓出items裡面有幾個需綁定的.form-bind-items-data，並綁定到該位置
         formData[itemBoxKey][j][formBindItems.eq(k).attr('name')] = formBindItems.eq(k).val()
       }
+      let formBindSelects = $('.items-box').eq(i).find('.items').eq(j).find('.form-bind-items-select')
+      for (let k = 0; k < formBindSelects.length; k++) {
+        // 抓出items裡面有幾個需綁定的.form-bind-items-data，並綁定到該位置
+        formData[itemBoxKey][j][formBindSelects.eq(k).attr('name')] = parseInt(formBindSelects.eq(k).val()) ? true : false;
+      }
     }
   }
   for (let i = 0; i < $('select').length; i++) {

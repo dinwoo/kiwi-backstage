@@ -4,7 +4,7 @@ block pageCSS
   //- link(href="./css/index.css", rel="stylesheet")
 
 block pageJs
-  script(src="./js/unload.js")
+  script(src="./js/form.js")
   
 block pageType
   - var page = 'unload'
@@ -65,7 +65,10 @@ block body
                 | OK!
               .invalid-feedback
                 | 不得為空
-      button.btn.btn-primary(type='submit') Submit form
+      .page-data(data-apiUrl="/api/v1/unload" data-nextTo="unload.html" data-isMainPage="1")
+      .btn-box
+        button.submit.btn.btn-primary(type='submit') Submit
+        button.draft.btn.btn-primary(type='submit') preview
 
 
 
