@@ -71,6 +71,35 @@
                   <div class="invalid-feedback">不得為空</div>
                 </div>
               </div>
+              <div class="form-row">
+                <div class="items-title">bottomUrl_items</div>
+                <div class="items-box" id="bottomUrl_items" data-itemKey="bottomUrl_items">
+                  <div class="items">
+                    <div class="col-md-12">
+                      <label class="form-label">是否顯示</label>
+                      <select class="form-select form-bind-items-select" name="bottomUrl_item_isEnable" required="">
+                        <option value="1">顯示</option>
+                        <option value="0">不顯示</option>
+                      </select>
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">標題</label>
+                      <input class="form-control form-bind-items-data" type="text" name="bottomUrl_item_title" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">連結</label>
+                      <input class="form-control form-bind-items-data" type="text" name="bottomUrl_item_url" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-add btn btn-sm btn-primary" data-copy="bottomUrl_items">新增</div>
+              </div>
             </div>
             <div class="content">
               <h3>customerService</h3>
@@ -162,6 +191,41 @@
                 </div>
               </div>
               <div class="form-row">
+                <div class="items-title">menu_others_items</div>
+                <div class="items-box" id="menu_others_items" data-itemKey="menu_others_items">
+                  <div class="items">
+                    <div class="col-md-12">
+                      <label class="form-label">是否顯示</label>
+                      <select class="form-select form-bind-items-select" name="menu_others_item_isEnable" required="">
+                        <option value="1">顯示</option>
+                        <option value="0">不顯示</option>
+                      </select>
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">事件代碼</label>
+                      <input class="form-control form-bind-items-data" type="text" name="menu_others_item_id" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">標題</label>
+                      <input class="form-control form-bind-items-data" type="text" name="menu_others_item_title" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">連結</label>
+                      <input class="form-control form-bind-items-data" type="text" name="menu_others_item_url" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-add btn btn-sm btn-primary" data-copy="menu_others_items">新增</div>
+              </div>
+              <div class="form-row">
                 <div class="col-md-12">
                   <label class="form-label" for="menu_subscribe_isEnable">menu_subscribe是否顯示</label>
                   <select class="form-select" id="menu_subscribe_isEnable" name="menu_subscribe_isEnable" required="">
@@ -173,12 +237,39 @@
                 </div>
               </div>
               <div class="form-row">
-                <div class="col-md-12">
-                  <label class="form-label" for="lineService_id">事件代碼</label>
-                  <input class="form-control form-bind-data" id="lineService_id" type="text" name="lineService_id" value="" required="">
-                  <div class="valid-feedback">OK!</div>
-                  <div class="invalid-feedback">不得為空</div>
+                <div class="items-title">menu_subscribe_items</div>
+                <div class="items-box" id="menu_subscribe_items" data-itemKey="menu_subscribe_items">
+                  <div class="items">
+                    <div class="col-md-12">
+                      <label class="form-label">是否顯示</label>
+                      <select class="form-select form-bind-items-select" name="menu_subscribe_item_isEnable" required="">
+                        <option value="1">顯示</option>
+                        <option value="0">不顯示</option>
+                      </select>
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">事件代碼</label>
+                      <input class="form-control form-bind-items-data" type="text" name="menu_subscribe_item_id" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">標題</label>
+                      <input class="form-control form-bind-items-data" type="text" name="menu_subscribe_item_title" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">連結</label>
+                      <input class="form-control form-bind-items-data" type="text" name="menu_subscribe_item_url" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                  </div>
                 </div>
+                <div class="btn-add btn btn-sm btn-primary" data-copy="menu_subscribe_items">新增</div>
               </div>
             </div>
             <div class="content">
@@ -211,11 +302,145 @@
                 </div>
               </div>
             </div>
+            <div class="content">
+              <h3>social</h3>
+              <div class="form-row">
+                <div class="items-title">social_items</div>
+                <div class="items-box" id="social_items" data-itemKey="social_items">
+                  <div class="items">
+                    <div class="col-md-12">
+                      <label class="form-label">圖片</label>
+                      <input class="form-control" type="file" value="" imgClass="social_item_icon">
+                      <input class="form-control form-bind-items-data" type="hidden" name="social_item_icon" value="" required=""><img class="file-img social_item_icon" src="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label class="form-label">連結</label>
+                      <input class="form-control form-bind-items-data" type="text" name="social_item_url" value="" required="">
+                      <div class="valid-feedback">OK!</div>
+                      <div class="invalid-feedback">不得為空</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-add btn btn-sm btn-primary" data-copy="social_items">新增</div>
+              </div>
+            </div>
           </div>
-          <button class="btn btn-primary" type="submit">Submit form</button>
+          <div class="page-data" data-apiUrl="/api/v1/footer" data-nextTo="footer.html" data-isMainPage="1"></div>
+          <div class="btn-box">
+            <button class="submit btn btn-primary" type="submit">Submit</button>
+            <button class="draft btn btn-primary" type="submit">preview</button>
+          </div>
         </form>
+        <div class="hidde-box">
+          <div class="bottomUrl_items">
+            <div class="items">
+              <div class="col-md-12">
+                <label class="form-label">是否顯示</label>
+                <select class="form-select form-bind-items-select" name="bottomUrl_item_isEnable" required="">
+                  <option value="1">顯示</option>
+                  <option value="0">不顯示</option>
+                </select>
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">標題</label>
+                <input class="form-control form-bind-items-data" type="text" name="bottomUrl_item_title" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">連結</label>
+                <input class="form-control form-bind-items-data" type="text" name="bottomUrl_item_url" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu_others_items">
+            <div class="items">
+              <div class="col-md-12">
+                <label class="form-label">是否顯示</label>
+                <select class="form-select form-bind-items-select" name="menu_others_item_isEnable" required="">
+                  <option value="1">顯示</option>
+                  <option value="0">不顯示</option>
+                </select>
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">事件代碼</label>
+                <input class="form-control form-bind-items-data" type="text" name="menu_others_item_id" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">標題</label>
+                <input class="form-control form-bind-items-data" type="text" name="menu_others_item_title" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">連結</label>
+                <input class="form-control form-bind-items-data" type="text" name="menu_others_item_url" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu_subscribe_items">
+            <div class="items">
+              <div class="col-md-12">
+                <label class="form-label">是否顯示</label>
+                <select class="form-select form-bind-items-select" name="menu_subscribe_item_isEnable" required="">
+                  <option value="1">顯示</option>
+                  <option value="0">不顯示</option>
+                </select>
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">事件代碼</label>
+                <input class="form-control form-bind-items-data" type="text" name="menu_subscribe_item_id" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">標題</label>
+                <input class="form-control form-bind-items-data" type="text" name="menu_subscribe_item_title" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">連結</label>
+                <input class="form-control form-bind-items-data" type="text" name="menu_subscribe_item_url" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+            </div>
+          </div>
+          <div class="social_items">
+            <div class="items">
+              <div class="col-md-12">
+                <label class="form-label">圖片</label>
+                <input class="form-control" type="file" value="" imgClass="social_item_icon">
+                <input class="form-control form-bind-items-data" type="hidden" name="social_item_icon" value="" required=""><img class="file-img social_item_icon" src="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">連結</label>
+                <input class="form-control form-bind-items-data" type="text" name="social_item_url" value="" required="">
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">不得為空</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
     </div>
-    <script src="./js/footer.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>
